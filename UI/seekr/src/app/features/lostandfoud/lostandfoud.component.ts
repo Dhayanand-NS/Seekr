@@ -13,7 +13,6 @@ export class LostandfoudComponent implements OnInit {
   constructor(private lostandfoudService: LostandfoudService){}
   ngOnInit(): void {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude+""+position.coords.longitude);
       this.lostandfoudService.changeData({latitude : position.coords.latitude, longitude : position.coords.longitude});
 });
  }
