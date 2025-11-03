@@ -16,7 +16,7 @@ export class MapComponent implements OnInit {
     let searchCircle = L.circle;
     let currentCircle = L.circle;
     let currentMarker = L.marker;
-
+    var position :any;
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 15,
       attribution: '&copy; OpenStreetMap',
@@ -29,6 +29,7 @@ export class MapComponent implements OnInit {
       position: 'topright',
     }).addTo(map);
 
+    //when location is searched in the search box, this event triggers.
     geocoderControl.on('markgeocode', (e: any) => {
       const latlng = e.geocode.center;
       this.lat = latlng.lat;
@@ -46,12 +47,29 @@ export class MapComponent implements OnInit {
         map.removeLayer(e.marker);
       }
       searchCircle = L.circle(latlng, {
+        draggable: true,
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: 500,
       }).addTo(map);
+
+      // for the below line the L.Marker creates a new marker but not the existing, if existing is needed use e.marker
+
+      // e.marker = L.marker([this.lat, this.long], {
+      //     draggable: true, // draggable marker
+      //   }).addTo(map);
+      // e.marker.on('drag', function (e: any) {
+      //   var marker = e.target;
+      //   var position = marker.getLatLng();
+      //   map.panTo(new L.LatLng(position.lat, position.lng));
+      //   searchCircle.setLatLng(position);//settig the coordinates to the circle while drag.
+      // });
+
+
     });
+
+    //When current location changes, below code receives the coordinates and work accordingly.
     this.lostandfoundservice.currentData.subscribe((data) => {
       this.lat = data?.latitude;
       this.long = data?.longitude;
@@ -68,15 +86,29 @@ export class MapComponent implements OnInit {
         }
         map.setView([this.lat, this.long], 13);
 
-        currentCircle = L.circle([this.lat, this.long], {
+
+
+        currentMarker = L.marker([this.lat, this.long], {
+          draggable: true, // draggable marker
+        }).addTo(map);
+        
+        currentMarker.on('drag',  (e: any) => {
+          var marker = e.target;
+          position = marker.getLatLng();
+          map.panTo(new L.LatLng(position.lat, position.lng));
+          currentCircle.setLatLng(position);//settig the coordinates to the circle while drag.
+          this.lat = position.lat;
+          this.long = position.lng;
+        });
+
+          currentCircle = L.circle([this.lat, this.long], {
+          draggable: true,
           color: 'red',
           fillColor: '#f03',
           fillOpacity: 0.5,
           radius: 500,
         }).addTo(map);
         currentCircle.bindPopup('Your locato');
-
-        currentMarker = L.marker([this.lat, this.long]).addTo(map);
       }
     });
   }
