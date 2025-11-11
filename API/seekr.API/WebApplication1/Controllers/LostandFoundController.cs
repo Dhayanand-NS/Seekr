@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
         public LostandFoundController(ILostandFondRepository lostandFondRepository) {
             _lostandFoundRepository = lostandFondRepository;
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> AddLostandFound(LostandFoundDTO lostandFound)
         {
@@ -27,7 +27,8 @@ namespace WebApplication1.Controllers
                 Longitude = lostandFound.Longitude,
                 Location = lostandFound.Location,
                 DatePosted = DateTime.UtcNow,
-                ContactInfo = lostandFound.ContactInfo
+                ContactInfo = lostandFound.ContactInfo,
+                DateFoundLost = lostandFound.DateFoundLost
             };
             var result = await _lostandFoundRepository.AddLostandFoundAsync(LostadFound);
             
@@ -41,14 +42,19 @@ namespace WebApplication1.Controllers
                 Longitude = result.Longitude,
                 Location = result.Location,
                 DatePosted = result.DatePosted,
-                ContactInfo = result.ContactInfo
+                ContactInfo = result.ContactInfo,
+                DateFoundLost = result.DateFoundLost
+                
             };
-            {
-
-            }
             return Ok(LostandFoundDTO);
         }
+        [HttpGet]
+        public async Task<IEnumerable<LostandFound>> GetAllLostandFound()
+        {
+            var result = await _lostandFoundRepository.GetAllLostandFoundAsync();
 
+            return result;
+        }
 
     }
 }

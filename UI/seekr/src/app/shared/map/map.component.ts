@@ -34,6 +34,8 @@ export class MapComponent implements OnInit {
       const latlng = e.geocode.center;
       this.lat = latlng.lat;
       this.long = latlng.lng;
+      console.log("From map comp searched " + this.lat);
+      console.log("From map comp searched" + this.long);
       if (currentCircle && map.hasLayer(currentCircle)) {
         map.removeLayer(currentCircle);
       }
@@ -65,15 +67,15 @@ export class MapComponent implements OnInit {
       //   map.panTo(new L.LatLng(position.lat, position.lng));
       //   searchCircle.setLatLng(position);//settig the coordinates to the circle while drag.
       // });
-
-
+         this.lostandfoundservice.latestcoordinates(this.lat,this.long);
     });
 
     //When current location changes, below code receives the coordinates and work accordingly.
     this.lostandfoundservice.currentData.subscribe((data) => {
       this.lat = data?.latitude;
       this.long = data?.longitude;
-
+      console.log("From map comp current" + this.lat);
+      console.log("From map comp current" + this.long);
       if (this.lat && this.long) {
         if (currentCircle && map.hasLayer(currentCircle)) {
           map.removeLayer(currentCircle);
@@ -110,6 +112,7 @@ export class MapComponent implements OnInit {
         }).addTo(map);
         currentCircle.bindPopup('Your locato');
       }
+          this.lostandfoundservice.latestcoordinates(this.lat,this.long);
     });
   }
 }

@@ -34,6 +34,42 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "LostandFound"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LostandFound"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LostandFound"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LostandFound"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/WeatherForecast": {
@@ -78,9 +114,13 @@
   },
   "components": {
     "schemas": {
-      "LostandFoundDTO": {
+      "LostandFound": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
           "title": {
             "type": "string",
             "nullable": true
@@ -91,7 +131,7 @@
           },
           "type": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
           "imageURL": {
             "type": "string",
@@ -114,6 +154,56 @@
             "format": "date-time"
           },
           "contactInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateFoundLost": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LostandFoundDTO": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "datePosted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "contactInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateFoundLost": {
             "type": "string",
             "nullable": true
           }

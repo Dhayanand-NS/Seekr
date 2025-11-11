@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\lostandfoundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\repositories\\implementation\\lostandfoundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repositories\\implementation\\lostandfoundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,16 +15,32 @@
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repositories\\interface\\ilostandfondrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\models\\dto\\lostandfounddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\dto\\lostandfounddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\models\\domainmodels\\lostandfound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\domainmodels\\lostandfound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\models\\dto\\lostandfounddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\dto\\lostandfounddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\migrations\\20251108133703_added new prop for datefoundlost- date of found or lost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\migrations\\20251108133703_added new prop for datefoundlost- date of found or lost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\migrations\\20251108133220_changed type of type prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\migrations\\20251108133220_changed type of type prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|WebApplication1\\WebApplication1.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\webapplication1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,12 +70,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -72,27 +80,124 @@
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\LostandFoundController.cs",
               "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Controllers\\LostandFoundController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\LostandFoundController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T02:36:24.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Data\\ApplicationDBContext.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Data\\ApplicationDBContext.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Data\\ApplicationDBContext.cs",
-              "RelativeToolTip": "WebApplication1\\Data\\ApplicationDBContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LostandFoundRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T17:53:31.718Z",
+              "WhenOpened": "2025-10-08T17:03:54.144Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ILostandFondRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T17:03:03.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LostandFound.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DomainModels\\LostandFound.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\DomainModels\\LostandFound.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DomainModels\\LostandFound.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\DomainModels\\LostandFound.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwA4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T17:54:34.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDBContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\ApplicationDBContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Migrations\\ApplicationDBContextModelSnapshot.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\ApplicationDBContextModelSnapshot.cs",
+              "RelativeToolTip": "WebApplication1\\Migrations\\ApplicationDBContextModelSnapshot.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAcwDkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T13:32:46.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:23:42.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LostandFoundDTO.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T17:19:26.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20251108133703_Added new prop for DateFoundLost- Date of Found or Lost.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\20251108133703_Added new prop for DateFoundLost- Date of Found or Lost.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Migrations\\20251108133703_Added new prop for DateFoundLost- Date of Found or Lost.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\20251108133703_Added new prop for DateFoundLost- Date of Found or Lost.cs",
+              "RelativeToolTip": "WebApplication1\\Migrations\\20251108133703_Added new prop for DateFoundLost- Date of Found or Lost.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T13:37:03.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20251108133220_Changed type of Type prop.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\20251108133220_Changed type of Type prop.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Migrations\\20251108133220_Changed type of Type prop.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\20251108133220_Changed type of Type prop.cs",
+              "RelativeToolTip": "WebApplication1\\Migrations\\20251108133220_Changed type of Type prop.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T13:32:22.445Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T02:36:31.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "20251008023323_Created DB only with LastandFund table.cs",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Migrations\\20251008023323_Created DB only with LastandFund table.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Migrations\\20251008023323_Created DB only with LastandFund table.cs",
@@ -104,85 +209,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDBContext.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Data\\ApplicationDBContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Data\\ApplicationDBContext.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Data\\ApplicationDBContext.cs",
+              "RelativeToolTip": "WebApplication1\\Data\\ApplicationDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T02:36:31.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T17:53:31.718Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LostandFoundDTO.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\DTO\\LostandFoundDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T17:19:26.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T18:23:42.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LostandFoundRepository.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
-              "RelativeToolTip": "WebApplication1\\Repositories\\Implementation\\LostandFoundRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T17:03:54.144Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ILostandFondRepository.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
-              "RelativeToolTip": "WebApplication1\\Repositories\\Interface\\ILostandFondRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T17:03:03.762Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LostandFound.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DomainModels\\LostandFound.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\DomainModels\\LostandFound.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\Models\\DomainModels\\LostandFound.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\DomainModels\\LostandFound.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T17:54:34.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
@@ -194,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "WebApplication1.csproj",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\WebApplication1.csproj",
               "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
@@ -206,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\WebApplication1\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WebApplication1\\WeatherForecast.cs",

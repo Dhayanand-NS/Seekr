@@ -1,0 +1,16 @@
+<div class="container">
+    <ng-container *ngIf="lostandfoundData$ | async as data">
+        <div class="row row-cols-3 row-cols-md-2 g-4" >
+            <div class="col" *ngFor="let item of data"x>
+                <div class="card h-100">
+                    <img src="/8767132.jpg" class="card-img-top" alt="submission image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">{{item.description}}</p>
+                        <a href="#" class="btn btn-primary">Match-1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

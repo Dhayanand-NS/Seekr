@@ -19,5 +19,9 @@ namespace WebApplication1.Repositories.Implementation
             await _dbContext.SaveChangesAsync();
             return lostandFound;
         }
+        public async Task<IEnumerable<LostandFound>> GetAllLostandFoundAsync()
+        {
+            return _dbContext.LostandFound.ToList();
+        }
     }
 }

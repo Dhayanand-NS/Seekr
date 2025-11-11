@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seekr | Find What’s Lost</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #007bff, #6610f2);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .stats-section {
+      background: #fff;
+      color: #333;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+    }
+    .stat-card {
+      padding: 40px 20px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    .stat-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: #007bff;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 class="display-4 fw-bold">Welcome to <span class="text-warning">Seekr</span></h1>
+    <p class="lead">Connecting lost and found items to their rightful owners.</p>
+    <a href="#" class="btn btn-warning btn-lg mt-3">Report an Item</a>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="container stats-section p-5 mt-5">
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="stat-card bg-light">
+          <div class="stat-number" data-count="1200">0</div>
+          <h5>Items Found</h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card bg-light">
+          <div class="stat-number" data-count="980">0</div>
+          <h5>Returned Successfully</h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card bg-light">
+          <div class="stat-number" data-count="1500">0</div>
+          <h5>Active Users</h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card bg-light">
+          <div class="stat-number" data-count="2500">0</div>
+          <h5>Total Reports</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer mt-5">
+    <p>© 2025 Seekr | Built with ❤️ by Dhayanand</p>
+  </div>
+
+  <script>
+    // Simple counter animation
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        const speed = 50;
+        const increment = target / 100;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, speed);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
+
+</body>
+</html>
