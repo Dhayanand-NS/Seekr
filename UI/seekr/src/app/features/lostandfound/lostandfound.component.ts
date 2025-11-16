@@ -1,0 +1,71 @@
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { MapComponent } from '../../shared/map/map.component';
+import { LostService } from '../services/lost/lost.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { LostFound } from '../models/lostfound';
+import { FoundService } from '../services/found/found.service';
+
+@Component({
+  selector: 'app-lostandfoud',
+  imports: [MapComponent, FormsModule, CommonModule],
+  templateUrl: './lostandfound.component.html',
+  styleUrl: './lostandfound.component.css',
+})
+export class LostandfoudComponent implements OnInit {
+  modal: LostFound;
+  isLostFoundModalvisible: boolean = false;
+  lostorfound?: string;
+  lat: number = 0;
+  long: number = 0;
+  constructor(private lostService: LostService, private foundService :FoundService) {
+    this.modal = {
+      title: '',
+      description: '',
+      type: '',
+      imageURL: '',
+      latitude: 0,
+      longitude: 0,
+      location: '',
+      date: new Date(),
+      contactinfo: '',
+      radius : 500
+    };
+  }
+  ngOnInit(): void {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.lostService.changeData({latitude: position.coords.latitude, longitude: position.coords.longitude});
+      this.lat = position.coords.latitude;
+      this.long = position.coords.longitude;
+    });
+    setTimeout(() => {
+      this.isLostFoundModalvisible = true;
+    }, 2000);
+  }
+  setLostFound(islostorfound: string) {
+  
+    this.lostorfound = islostorfound;
+    console.log("This is the value of type :"+ this.lostorfound)
+  }
+
+ submitLostandFound() {
+    if (this.lostorfound == 'Lost') {
+      this.modal.type = this.lostorfound;
+      this.lostService.addlost(this.modal).subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+      });
+    }
+    else if(this.lostorfound == 'found'){
+      this.modal.type = this.lostorfound;
+      this.modal.latitude = this.lat;
+      this.modal.longitude = this.long;
+      this.foundService.addfound(this.modal).subscribe({
+        next:(res)=>{
+          console.log(res);
+        }
+      })
+    }
+  }
+}

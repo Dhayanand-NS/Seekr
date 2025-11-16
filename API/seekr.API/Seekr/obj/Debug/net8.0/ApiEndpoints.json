@@ -1,0 +1,74 @@
+[
+  {
+    "ContainingType": "Seekr.Controllers.FoundController",
+    "Method": "AddFound",
+    "RelativePath": "api/Found",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "found",
+        "Type": "Seekr.Models.DomainModels.Found",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Seekr.Controllers.FoundController",
+    "Method": "GetAllFound",
+    "RelativePath": "api/Found",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Seekr.Models.DomainModels.Found, Seekr, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Seekr.Controllers.LostController",
+    "Method": "AddLost",
+    "RelativePath": "api/Lost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lost",
+        "Type": "Seekr.Models.DomainModels.Lost",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Seekr.Controllers.LostController",
+    "Method": "GetAllLostandFound",
+    "RelativePath": "api/Lost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Seekr.Models.DomainModels.Lost, Seekr, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

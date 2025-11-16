@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Seekr": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:50542;http://localhost:50543"
+    }
+  }
+}

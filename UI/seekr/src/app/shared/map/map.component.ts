@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LostandfoudService } from '../../features/services/lostandfoud.service';
+import { LostService } from '../../features/services/lost/lost.service';
 declare let L: any;
 @Component({
   selector: 'app-map',
@@ -10,7 +10,7 @@ declare let L: any;
 export class MapComponent implements OnInit {
   lat?: number;
   long?: number;
-  constructor(private lostandfoundservice: LostandfoudService) {}
+  constructor(private lostservice: LostService) {}
   ngOnInit(): void {
     let map = L.map('map');
     let searchCircle = L.circle;
@@ -67,11 +67,11 @@ export class MapComponent implements OnInit {
       //   map.panTo(new L.LatLng(position.lat, position.lng));
       //   searchCircle.setLatLng(position);//settig the coordinates to the circle while drag.
       // });
-         this.lostandfoundservice.latestcoordinates(this.lat,this.long);
+         this.lostservice.latestcoordinates(this.lat,this.long);
     });
 
     //When current location changes, below code receives the coordinates and work accordingly.
-    this.lostandfoundservice.currentData.subscribe((data) => {
+    this.lostservice.currentData.subscribe((data) => {
       this.lat = data?.latitude;
       this.long = data?.longitude;
       console.log("From map comp current" + this.lat);
@@ -112,7 +112,7 @@ export class MapComponent implements OnInit {
         }).addTo(map);
         currentCircle.bindPopup('Your locato');
       }
-          this.lostandfoundservice.latestcoordinates(this.lat,this.long);
+          this.lostservice.latestcoordinates(this.lat,this.long);
     });
   }
 }

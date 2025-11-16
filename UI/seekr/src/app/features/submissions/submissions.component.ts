@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { LostandfoudService } from '../services/lostandfoud.service';
+import { LostService } from '../services/lost/lost.service';
 import { Observable } from 'rxjs';
-import { LostandFound } from '../models/lostandfound';
+import { LostFound } from '../models/lostfound';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-submissions',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './submissions.component.html',
   styleUrl: './submissions.component.css'
 })
 export class SubmissionsComponent implements OnInit {
-  lostandfoundData$? : Observable<LostandFound[]>
-  constructor(private lostandfoundService : LostandfoudService){
+  lostandfoundData$? : Observable<LostFound[]>
+  constructor(private lostService : LostService){
 
   }
   ngOnInit(): void {
-    this.lostandfoundData$ =this.lostandfoundService.getlosandfoundbyuser();
+    this.lostandfoundData$ =this.lostService.getlosandfoundbyuser();
   }
  
 }
+
+
