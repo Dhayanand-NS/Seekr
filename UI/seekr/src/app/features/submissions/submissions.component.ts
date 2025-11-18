@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { LostFound } from '../models/lostfound';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from "@angular/router";
+import { SubmissionsService } from '../services/submissions/submissions.service';
+import { Submissions } from '../models/submissions';
 
 @Component({
   selector: 'app-submissions',
@@ -12,14 +14,14 @@ import { RouterLink } from "@angular/router";
   styleUrl: './submissions.component.css'
 })
 export class SubmissionsComponent implements OnInit {
-  lostandfoundData$? : Observable<LostFound[]>
-  constructor(private lostService : LostService){
+  submissions$? : Observable<Submissions[]>
+  constructor(private submissionsService : SubmissionsService){
 
   }
   ngOnInit(): void {
-    this.lostandfoundData$ =this.lostService.getlosandfoundbyuser();
+    this.submissions$ =this.submissionsService.getALLSubmissonsByUser();
+    console.log(this.submissions$);
   }
- 
 }
 
 

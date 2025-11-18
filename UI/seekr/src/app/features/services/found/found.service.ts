@@ -4,13 +4,22 @@ import { Observable } from 'rxjs';
 import { LostFound } from '../../models/lostfound';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FoundService {
+  latitude?: number;
+  longitude?: number;
 
-  constructor(private Http : HttpClient) { }
+  constructor(private Http: HttpClient) {}
 
-    addfound(modal :LostFound):Observable<void>{
-       return this.Http.post<void>("http://localhost:50542/api/Found",modal)
-    }
+  addfound(modal: LostFound): Observable<void> {
+        modal.latitude = this.latitude;
+        modal.longitude = this.longitude;
+    return this.Http.post<void>('http://localhost:50542/api/Found', modal);
+  }
+
+  latestcoordinates(latitude?: number, longitude?: number) {
+    this.latitude = latitude;
+    this.longitude = longitude;
+  }
 }

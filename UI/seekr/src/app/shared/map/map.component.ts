@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LostService } from '../../features/services/lost/lost.service';
+import { FoundService } from '../../features/services/found/found.service';
 declare let L: any;
 @Component({
   selector: 'app-map',
@@ -10,7 +11,7 @@ declare let L: any;
 export class MapComponent implements OnInit {
   lat?: number;
   long?: number;
-  constructor(private lostservice: LostService) {}
+  constructor(private lostservice: LostService, private foundService : FoundService) {}
   ngOnInit(): void {
     let map = L.map('map');
     let searchCircle = L.circle;
@@ -101,6 +102,9 @@ export class MapComponent implements OnInit {
           currentCircle.setLatLng(position);//settig the coordinates to the circle while drag.
           this.lat = position.lat;
           this.long = position.lng;
+          console.log(`From dragabble to know the coordinates ${this.lat}, ${this.long}`);
+          this.lostservice.latestcoordinates(this.lat,this.long);
+          this.foundService.latestcoordinates(this.lat,this.long);
         });
 
           currentCircle = L.circle([this.lat, this.long], {
@@ -113,6 +117,9 @@ export class MapComponent implements OnInit {
         currentCircle.bindPopup('Your locato');
       }
           this.lostservice.latestcoordinates(this.lat,this.long);
+                    this.foundService.latestcoordinates(this.lat,this.long);
+
     });
   }
 }
+//13.064094663422964, 80.28430938720705kjasdfuaw

@@ -54,7 +54,6 @@ namespace Seekr.Controllers
         public async Task<IEnumerable<Lost>> GetAllLostandFound()
         {
             var result = await _lostRepository.GetAllLostAsync();
-
             return result;
         }
     }

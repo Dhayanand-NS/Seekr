@@ -57,7 +57,7 @@ export class LostandfoudComponent implements OnInit {
         },
       });
     }
-    else if(this.lostorfound == 'found'){
+    else if(this.lostorfound == 'Found'){
       this.modal.type = this.lostorfound;
       this.modal.latitude = this.lat;
       this.modal.longitude = this.long;

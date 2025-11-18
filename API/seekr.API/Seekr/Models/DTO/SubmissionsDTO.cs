@@ -1,0 +1,20 @@
+﻿namespace Seekr.Models.DTO
+{
+    public class SubmissionsDTO
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Type { get; set; } // Lost or Found
+        public string ImageURL { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string Location { get; set; }
+        public DateTime DatePosted { get; set; }
+        public string ContactInfo { get; set; }
+        public string Date { get; set; }
+        public int radius { get; set; }
+        public bool IsMatched { get; set; }
+        public Guid? MatchedId { get; set; }
+
+    }
+}

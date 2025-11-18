@@ -138,6 +138,18 @@
           }
         }
       }
+    },
+    "/api/Submissions": {
+      "get": {
+        "tags": [
+          "Submissions"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

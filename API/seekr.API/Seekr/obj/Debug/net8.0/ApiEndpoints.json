@@ -70,5 +70,15 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Seekr.Controllers.SubmissionsController",
+    "Method": "GetAllSubmissionsByUser",
+    "RelativePath": "api/Submissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
