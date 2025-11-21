@@ -15,6 +15,8 @@
         public int radius { get; set; }
         public bool IsMatched { get; set; }
         public Guid? MatchedId { get; set; }
+        public double MatchedLatitude { get; set; }
+        public double MatchedLongitude { get; set; }
 
     }
 }

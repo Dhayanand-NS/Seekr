@@ -23,5 +23,10 @@ namespace Seekr.Repositories.Implementation
         {
             return _dbContext.Found.ToList();
         }
+        public async Task<Found> GetFoundByIdAsync(Guid id)
+        {
+            var found = await _dbContext.Found.FindAsync(id);
+            return found;
+        }
     }
 }

@@ -10,5 +10,7 @@ export interface Submissions{
     contactinfo: string,
     radius : number,
     isMatched : boolean,
-    MatchedID : string
+    matchedId : string,
+    matchedLatitude : number,
+    matchedLongitude : number
 }

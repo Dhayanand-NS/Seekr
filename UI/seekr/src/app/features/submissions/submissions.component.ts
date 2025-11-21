@@ -20,7 +20,10 @@ export class SubmissionsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.submissions$ =this.submissionsService.getALLSubmissonsByUser();
-    console.log(this.submissions$);
+    
+    this.submissions$.subscribe( data =>{
+      console.log(data);
+    })
   }
 }
 

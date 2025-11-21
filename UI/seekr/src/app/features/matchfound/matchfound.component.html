@@ -1,5 +1,36 @@
 <div class="container">
       <div class="row">
             <div class="col-sm-8"><app-map class="position-relative"></app-map></div>
+            <ng-container *ngIf="matchfound$ | async as item">
+                  <div class="col-sm-4">
+                        <div class="mb-3 mt-3">
+                              <h4 class="text-center">We found a match</h4>
+                              <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" [value]="item.title" name="title" readonly>
+                              </div>
+                              <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <input type="text" class="form-control" [value]="item.description"name="description" readonly>
+                              </div>
+                              <div class="mb-3">
+                                    <label for="location" class="form-label">Location</label>
+                                    <input type="text" class="form-control" [value]="item.location" name="location" readonly>
+                              </div>
+                              <div class="mb-3">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" [value]="item.date" name="date" readonly>
+                              </div>
+                              <div class="mb-3">
+                                    <label for="formFileMultiple" class="form-label">Image</label>
+                                    <input class="form-control" type="file" [value]="item.imageURL" name="imageURL" readonly>
+                              </div>
+                              <div class="mb-3">
+                                    <label for="Contact" class="form-label">Contact</label>
+                                    <input type="text" class="form-control" [value]="item.contactinfo" name="contactinfo"readonly>
+                              </div>
+                        </div>
+                  </div>
+            </ng-container>
       </div>
 </div>

@@ -7,5 +7,7 @@ namespace Seekr.Repositories.Interface
         Task<Found> AddFoundAsync(Found lostandFound);
 
         Task<IEnumerable<Found>> GetAllFoundAsync();
+
+        Task<Found> GetFoundByIdAsync(Guid id);
     }
 }

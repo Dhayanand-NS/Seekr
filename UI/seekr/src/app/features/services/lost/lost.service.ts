@@ -33,4 +33,9 @@ export class LostService {
   getlosandfoundbyuser():Observable<LostFound[]>{
    return this.Http.get<LostFound[]>("http://localhost:50542/api/Lost")
   }
+
+  getLostByID(id : string ) : Observable<LostFound>{
+    console.log("Entered Lost Service to get Lost details");
+    return this.Http.get<LostFound>(`http://localhost:50542/api/Lost/${id}`)
+  }
 }

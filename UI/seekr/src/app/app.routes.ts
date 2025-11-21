@@ -23,7 +23,7 @@ export const routes: Routes = [
         component:SubmissionsComponent
     },
     {
-        path:'matchfound/:latitude/:longitude',
+        path:'matchfound/:latitude/:longitude/:matchedId/:type',
         component:MatchfoundComponent
     }
 ];

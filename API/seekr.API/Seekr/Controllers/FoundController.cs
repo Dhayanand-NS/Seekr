@@ -58,5 +58,12 @@ namespace Seekr.Controllers
 
             return result;
         }
+        [HttpGet("{id}")]
+        
+        public async Task<Found> GetFoundById(Guid id)
+        {
+            var result = await _foundRepository.GetFoundByIdAsync(id);
+            return result;
+        }
     }
 }

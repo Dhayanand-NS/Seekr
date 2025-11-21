@@ -56,5 +56,13 @@ namespace Seekr.Controllers
             var result = await _lostRepository.GetAllLostAsync();
             return result;
         }
+
+        [HttpGet("{id}")]
+        public async Task<Lost> GetLostById(Guid id)
+        {
+            var result = await _lostRepository.GetLostByIdAsync(id);
+            return result;
+        }
+
     }
 }

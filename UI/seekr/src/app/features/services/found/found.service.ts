@@ -22,4 +22,9 @@ export class FoundService {
     this.latitude = latitude;
     this.longitude = longitude;
   }
+    getFoundByID(id : string ) : Observable<LostFound>{
+                          console.log("Entered Found service to get found details");
+
+    return this.Http.get<LostFound>(`http://localhost:50542/api/Found/${id}`)
+  }
 }

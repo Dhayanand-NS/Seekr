@@ -1,7 +1,7 @@
 <div class="container mt-3">
     <ng-container *ngIf="submissions$ | async as data">
         <div class="row row-cols-3 row-cols-md-2 g-4" >
-            <div class="col" *ngFor="let item of data"x>
+            <div class="col" *ngFor="let item of data">
                 <div class="card h-100">
                     <img src="/8767132.jpg" style="width: 300px; height: 300px;" class="card-img-top" alt="submission image">
                     <div class="card-body">
@@ -11,7 +11,7 @@
                         <p class="card-text">Date Posted:</p>
                         <p class="card-text">Contact: {{item.contactinfo}}</p>
                         <ng-container *ngIf="item.isMatched ==true; else notMatched">
-                        <a [routerLink]="['/matchfound',item.latitude, item.longitude]" class="btn btn-primary">Match</a>
+                        <a [routerLink]="['/matchfound',item.matchedLatitude, item.matchedLongitude, item.matchedId,item.type]" class="btn btn-primary">Match</a>
                         </ng-container>
                         <ng-template #notMatched>
                         <a [routerLink]="" class="btn btn-secondary disabled">Match</a>

@@ -122,4 +122,3 @@ export class MapComponent implements OnInit {
     });
   }
 }
-//13.064094663422964, 80.28430938720705kjasdfuaw

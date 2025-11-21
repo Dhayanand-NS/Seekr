@@ -68,8 +68,13 @@ namespace Seekr.Controllers
                         {
                             lostDTO.IsMatched = true;
                             lostDTO.MatchedId = found.Id;
+                            lostDTO.MatchedLatitude = found.Latitude;
+                            lostDTO.MatchedLongitude = found.Longitude;
+
                             foundDTO.IsMatched = true;
                             foundDTO.MatchedId = lost.Id;
+                            foundDTO.MatchedLatitude = lost.Latitude;
+                            foundDTO.MatchedLongitude = lost.Longitude;
                         }
                     }
                 }
