@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LostFound } from '../models/lostfound';
 import { FoundService } from '../services/found/found.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lostandfoud',
@@ -18,7 +19,7 @@ export class LostandfoudComponent implements OnInit {
   lostorfound?: string;
   lat: number = 0;
   long: number = 0;
-  constructor(private lostService: LostService, private foundService :FoundService) {
+  constructor(private lostService: LostService, private foundService :FoundService, private router : Router) {
     this.modal = {
       title: '',
       description: '',
@@ -45,7 +46,6 @@ export class LostandfoudComponent implements OnInit {
   setLostFound(islostorfound: string) {
   
     this.lostorfound = islostorfound;
-    console.log("This is the value of type :"+ this.lostorfound)
   }
 
  submitLostandFound() {
@@ -53,7 +53,8 @@ export class LostandfoudComponent implements OnInit {
       this.modal.type = this.lostorfound;
       this.lostService.addlost(this.modal).subscribe({
         next: (res) => {
-          console.log(res);
+           console.log("This is the value of type :"+ this.lostorfound)
+          this.router.navigateByUrl('submissions');
         },
       });
     }
@@ -63,7 +64,8 @@ export class LostandfoudComponent implements OnInit {
       this.modal.longitude = this.long;
       this.foundService.addfound(this.modal).subscribe({
         next:(res)=>{
-          console.log(res);
+           console.log("This is the value of type :"+ this.lostorfound)
+          this.router.navigateByUrl('submissions');
         }
       })
     }

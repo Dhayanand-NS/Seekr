@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Seekr.Models.DomainModels;
 using Seekr.Models.DTO;
+using Seekr.Repositories.Implementation;
 using Seekr.Repositories.Interface;
 
 namespace Seekr.Controllers
@@ -10,12 +11,13 @@ namespace Seekr.Controllers
     public class LostController : ControllerBase
     {
         private readonly ILostRepository _lostRepository;
-        public LostController(ILostRepository lostRepository) {
+        public LostController(ILostRepository lostRepository)
+        {
             _lostRepository = lostRepository;
         }
-        
+
         [HttpPost]
-        public async Task<IActionResult> AddLost(Lost lost)
+        public async Task<IActionResult> AddLost(LostDTO lost)
         {
             var Lost = new Lost
             {
@@ -51,7 +53,7 @@ namespace Seekr.Controllers
             return Ok(LostDTO);
         }
         [HttpGet]
-        public async Task<IEnumerable<Lost>> GetAllLostandFound()
+        public async Task<IEnumerable<Lost>> GetAllLostandFound()//This method should be renamed as GetAllLostByUser later
         {
             var result = await _lostRepository.GetAllLostAsync();
             return result;
@@ -62,6 +64,48 @@ namespace Seekr.Controllers
         {
             var result = await _lostRepository.GetLostByIdAsync(id);
             return result;
+        }
+        [HttpGet]
+        [Route("GetLostList")]
+        public async Task<IEnumerable<Lost>> GetLostList()
+        {
+            var result = await _lostRepository.GetLostListAsync();
+            return result;
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateLost(LostDTO lost)
+        {
+            var existingLost = await _lostRepository.GetLostByIdAsync(lost.Id);
+            if (existingLost == null)
+            {
+                return NotFound();
+            }
+            existingLost.Title = lost.Title;
+            existingLost.Description = lost.Description;
+            existingLost.Type = lost.Type;
+            existingLost.ImageURL = lost.ImageURL;
+            existingLost.Latitude = lost.Latitude;
+            existingLost.Longitude = lost.Longitude;
+            existingLost.Location = lost.Location;
+            existingLost.ContactInfo = lost.ContactInfo;
+            existingLost.Date = lost.Date;
+            existingLost.radius = lost.radius;
+            var updatedLost = await _lostRepository.UpdateLostAsync(existingLost);
+            return Ok(updatedLost);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteFound(Guid id)
+        {
+            var existingFound = await _lostRepository.GetLostByIdAsync(id);
+            if (existingFound == null)
+            {
+                return NotFound();
+            }
+            await _lostRepository.DeleteLostByIdAsync(id);
+            return Ok(existingFound);
         }
 
     }

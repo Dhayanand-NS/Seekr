@@ -117,7 +117,7 @@ export class MapComponent implements OnInit {
         currentCircle.bindPopup('Your locato');
       }
           this.lostservice.latestcoordinates(this.lat,this.long);
-                    this.foundService.latestcoordinates(this.lat,this.long);
+          this.foundService.latestcoordinates(this.lat,this.long);
 
     });
   }

@@ -3,39 +3,54 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Coordinates } from '../../models/coordinates.model';
 import { LostFound } from '../../models/lostfound';
 import { HttpClient } from '@angular/common/http';
+import { LostFoundDTO } from '../../models/lostfoundDTO';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LostService {
-  latitude? : number;
-  longitude? : number;
-  constructor(private Http :HttpClient) {}
+  latitude?: number;
+  longitude?: number;
+  constructor(private Http: HttpClient) {}
   $coordinates = new BehaviorSubject<Coordinates | undefined>(undefined);
   currentData = this.$coordinates.asObservable();
 
   changeData(coordinates: Coordinates) {
-        console.log("Entered services")
+    console.log('Entered services with values ' + coordinates.latitude +" "+coordinates.longitude );
     this.$coordinates.next(coordinates);
   }
 
-  latestcoordinates(latitude? : number , longitude? : number){
-   this.latitude = latitude;
-   this.longitude =longitude;
+  latestcoordinates(latitude?: number, longitude?: number) {
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 
-  addlost(modal :LostFound):Observable<void>{
-        modal.latitude = this.latitude;
-        modal.longitude = this.longitude;
-     return this.Http.post<void>("http://localhost:50542/api/Lost",modal)
+  addlost(modal: LostFound): Observable<void> {
+    modal.latitude = this.latitude;
+    modal.longitude = this.longitude;
+    console.log(modal);
+    return this.Http.post<void>('http://localhost:50542/api/Lost', modal);
   }
 
-  getlosandfoundbyuser():Observable<LostFound[]>{
-   return this.Http.get<LostFound[]>("http://localhost:50542/api/Lost")
+  getlosandfoundbyuser(): Observable<LostFound[]> {
+    return this.Http.get<LostFound[]>('http://localhost:50542/api/Lost');
   }
 
-  getLostByID(id : string ) : Observable<LostFound>{
-    console.log("Entered Lost Service to get Lost details");
-    return this.Http.get<LostFound>(`http://localhost:50542/api/Lost/${id}`)
+  getLostByID(id: string): Observable<LostFoundDTO> {
+    console.log('Entered Lost Service to get Lost details');
+    return this.Http.get<LostFoundDTO>(`http://localhost:50542/api/Lost/${id}`);
+  }
+
+  getALLLost(): Observable<LostFoundDTO[]> {
+    return this.Http.get<LostFoundDTO[]>('http://localhost:50542/api/Lost/GetLostList');
+  }
+
+  deleteLost(lostId : string){
+    return this.Http.delete<LostFound>(`http://localhost:50542/api/Lost/${lostId}`);
+  }
+  updateLost(modal? : LostFound):Observable<LostFound>{
+    modal!.latitude = this.latitude;
+    modal!.longitude = this.longitude;
+   return this.Http.put<LostFound>(`http://localhost:50542/api/Lost`, modal);
   }
 }

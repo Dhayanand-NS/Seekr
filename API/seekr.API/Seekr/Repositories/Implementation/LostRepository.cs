@@ -28,5 +28,25 @@ namespace Seekr.Repositories.Implementation
             var lost = await _dbContext.Lost.FindAsync(id);
             return lost;
         }
+        public async Task<IEnumerable<Lost>> GetLostListAsync()
+        {
+            return _dbContext.Lost.ToList();
+        }
+        public async Task<Lost> UpdateLostAsync(Lost lost)
+        {
+            _dbContext.Lost.Update(lost);
+            await _dbContext.SaveChangesAsync();
+            return lost;
+        }
+        public async Task<Lost> DeleteLostByIdAsync(Guid id)
+        {
+            var lost = await _dbContext.Lost.FindAsync(id);
+            if (lost != null)
+            {
+                _dbContext.Lost.Remove(lost);
+                await _dbContext.SaveChangesAsync();
+            }
+            return lost;
+        }
     }
 }

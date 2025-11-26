@@ -1,0 +1,51 @@
+<div class="container">
+    <ng-container *ngIf="found$ | async as founditems ">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let found of founditems">
+                    <td>{{found.title}}</td>
+                    <td>{{found.description}}</td>
+                    <td>{{found.location}}</td>
+                    <td>{{found.type}}</td>
+                    <td><a [routerLink]="['/admin/lostandfoundlist/editlostandfound',found.type, found.id]">Edit</a></td>
+                    <td><button class="btn btn-danger" type="button" (click)="DeleteFound(found.id)">Delete</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+    <ng-container *ngIf="lost$ | async as lostitem ">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let lost of lostitem">
+                    <td>{{lost.title}}</td>
+                    <td>{{lost.description}}</td>
+                    <td>{{lost.location}}</td>
+                    <td>{{lost.type}}</td>
+                    <td><a href="" [routerLink]="['/admin/lostandfoundlist/editlostandfound',lost.type ,lost.id]">Edit</a></td>
+                    <td><button class="btn btn-danger" type="button" (click)="DeleteLost(lost.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>

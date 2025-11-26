@@ -9,5 +9,9 @@ namespace Seekr.Repositories.Interface
         Task<IEnumerable<Lost>> GetAllLostAsync();
 
         Task<Lost> GetLostByIdAsync(Guid id);
+        Task<IEnumerable<Lost>> GetLostListAsync();
+
+        Task<Lost> UpdateLostAsync(Lost lostandFound);
+        Task<Lost> DeleteLostByIdAsync(Guid id);
     }
 }

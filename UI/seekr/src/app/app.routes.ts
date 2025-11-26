@@ -4,6 +4,8 @@ import { LostandfoudComponent } from './features/lostandfound/lostandfound.compo
 import { HomeComponent } from './features/home/home.component';
 import { SubmissionsComponent } from './features/submissions/submissions.component';
 import { MatchfoundComponent } from './features/matchfound/matchfound.component';
+import { LostandfoundListComponent } from './features/lostandfound-list/lostandfound-list.component';
+import { EditLostandfoundComponent } from './features/edit-lostandfound/edit-lostandfound.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +27,13 @@ export const routes: Routes = [
     {
         path:'matchfound/:latitude/:longitude/:matchedId/:type',
         component:MatchfoundComponent
+    },
+    {
+        path:'admin/lostandfoundlist',
+        component :LostandfoundListComponent
+    },
+    {
+        path:'admin/lostandfoundlist/editlostandfound/:type/:id',
+        component :EditLostandfoundComponent
     }
 ];

@@ -9,5 +9,8 @@ namespace Seekr.Repositories.Interface
         Task<IEnumerable<Found>> GetAllFoundAsync();
 
         Task<Found> GetFoundByIdAsync(Guid id);
+        Task<IEnumerable<Found>> GetFoundListAsync();
+        Task<Found> UpdateFoundAsync(Found lostandFound);
+        Task<Found> DeleteFoundByIdAsync(Guid id);
     }
 }

@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\controllers\\lostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\controllers\\lostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\controllers\\foundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\controllers\\foundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\repositories\\interface\\ifoundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\repositories\\interface\\ifoundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\repositories\\implementation\\foundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\repositories\\implementation\\foundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\repositories\\interface\\ifoundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\repositories\\interface\\ifoundrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\repositories\\implementation\\lostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +21,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\repositories\\interface\\ilostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\repositories\\interface\\ilostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\controllers\\lostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\controllers\\lostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\models\\dto\\founddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\models\\dto\\founddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\models\\dto\\lostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|solutionrelative:seekr\\models\\dto\\lostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80AD17BC-92EE-4C46-951E-B2D30033E12E}|Seekr\\Seekr.csproj|d:\\codes\\projects\\seekr\\api\\seekr.api\\seekr\\controllers\\submissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,46 +50,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "LostRepository.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\LostRepository.cs",
-              "RelativeDocumentMoniker": "Seekr\\Repositories\\Implementation\\LostRepository.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\LostRepository.cs",
-              "RelativeToolTip": "Seekr\\Repositories\\Implementation\\LostRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T02:52:36.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ILostRepository.cs",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Interface\\ILostRepository.cs",
               "RelativeDocumentMoniker": "Seekr\\Repositories\\Interface\\ILostRepository.cs",
               "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Interface\\ILostRepository.cs",
               "RelativeToolTip": "Seekr\\Repositories\\Interface\\ILostRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T02:52:28.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FoundRepository.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\FoundRepository.cs",
-              "RelativeDocumentMoniker": "Seekr\\Repositories\\Implementation\\FoundRepository.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\FoundRepository.cs",
-              "RelativeToolTip": "Seekr\\Repositories\\Implementation\\FoundRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T02:51:46.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T02:52:28.989Z"
             },
             {
               "$type": "Document",
@@ -91,27 +72,62 @@
               "RelativeDocumentMoniker": "Seekr\\Repositories\\Interface\\IFoundRepository.cs",
               "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Interface\\IFoundRepository.cs",
               "RelativeToolTip": "Seekr\\Repositories\\Interface\\IFoundRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T02:51:27.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T02:51:27.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LostController.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\LostController.cs",
+              "RelativeDocumentMoniker": "Seekr\\Controllers\\LostController.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\LostController.cs",
+              "RelativeToolTip": "Seekr\\Controllers\\LostController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAApwF4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T02:28:42.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LostRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\LostRepository.cs",
+              "RelativeDocumentMoniker": "Seekr\\Repositories\\Implementation\\LostRepository.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\LostRepository.cs",
+              "RelativeToolTip": "Seekr\\Repositories\\Implementation\\LostRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T02:52:36.273Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FoundRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\FoundRepository.cs",
+              "RelativeDocumentMoniker": "Seekr\\Repositories\\Implementation\\FoundRepository.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Repositories\\Implementation\\FoundRepository.cs",
+              "RelativeToolTip": "Seekr\\Repositories\\Implementation\\FoundRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwCkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T02:51:46.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "FoundController.cs",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\FoundController.cs",
               "RelativeDocumentMoniker": "Seekr\\Controllers\\FoundController.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\FoundController.cs*",
-              "RelativeToolTip": "Seekr\\Controllers\\FoundController.cs*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDwAAAAJAAAAAAAAAA==",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\FoundController.cs",
+              "RelativeToolTip": "Seekr\\Controllers\\FoundController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T02:49:51.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "SubmissionsDTO.cs",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Models\\DTO\\SubmissionsDTO.cs",
               "RelativeDocumentMoniker": "Seekr\\Models\\DTO\\SubmissionsDTO.cs",
@@ -119,12 +135,35 @@
               "RelativeToolTip": "Seekr\\Models\\DTO\\SubmissionsDTO.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAYwBIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T01:34:43.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T01:34:43.733Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "FoundDTO.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Models\\DTO\\FoundDTO.cs",
+              "RelativeDocumentMoniker": "Seekr\\Models\\DTO\\FoundDTO.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Models\\DTO\\FoundDTO.cs",
+              "RelativeToolTip": "Seekr\\Models\\DTO\\FoundDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T03:09:33.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LostDTO.cs",
+              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Models\\DTO\\LostDTO.cs",
+              "RelativeDocumentMoniker": "Seekr\\Models\\DTO\\LostDTO.cs",
+              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Models\\DTO\\LostDTO.cs",
+              "RelativeToolTip": "Seekr\\Models\\DTO\\LostDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T03:09:10.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "SubmissionsController.cs",
               "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\SubmissionsController.cs",
               "RelativeDocumentMoniker": "Seekr\\Controllers\\SubmissionsController.cs",
@@ -132,21 +171,7 @@
               "RelativeToolTip": "Seekr\\Controllers\\SubmissionsController.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAYwEwAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T01:29:55.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LostController.cs",
-              "DocumentMoniker": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\LostController.cs",
-              "RelativeDocumentMoniker": "Seekr\\Controllers\\LostController.cs",
-              "ToolTip": "D:\\Codes\\Projects\\seekr\\API\\seekr.API\\Seekr\\Controllers\\LostController.cs*",
-              "RelativeToolTip": "Seekr\\Controllers\\LostController.cs*",
-              "ViewState": "AgIAACIAAAAAAAAAAAAkwDsAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T02:28:42.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T01:29:55.423Z"
             }
           ]
         }

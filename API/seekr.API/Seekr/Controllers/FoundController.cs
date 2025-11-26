@@ -16,7 +16,7 @@ namespace Seekr.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddFound(Found found)
+        public async Task<IActionResult> AddFound(FoundDTO found)
         {
             var Found = new Found
             {
@@ -52,7 +52,7 @@ namespace Seekr.Controllers
             return Ok(foundDTO);
         }
         [HttpGet]
-        public async Task<IEnumerable<Found>> GetAllFound()
+        public async Task<IEnumerable<Found>> GetAllFound()//This method should be renamed as GetAllFoundByUser later
         {
             var result = await _foundRepository.GetAllFoundAsync();
 
@@ -64,6 +64,47 @@ namespace Seekr.Controllers
         {
             var result = await _foundRepository.GetFoundByIdAsync(id);
             return result;
+        }
+        [HttpGet]
+        [Route("GetFoundList")]
+        public async Task<IEnumerable<Found>> GetFoundList()
+        {
+            var result = await _foundRepository.GetFoundListAsync();
+            return result;
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateFound(FoundDTO found)
+        {
+            var existingFound = await _foundRepository.GetFoundByIdAsync(found.Id);
+            if (existingFound == null)
+            {
+                return NotFound();
+            }
+            existingFound.Title = found.Title;
+            existingFound.Description = found.Description;
+            existingFound.Type = found.Type;
+            existingFound.ImageURL = found.ImageURL;
+            existingFound.Latitude = found.Latitude;
+            existingFound.Longitude = found.Longitude;
+            existingFound.Location = found.Location;
+            existingFound.ContactInfo = found.ContactInfo;
+            existingFound.Date = found.Date;
+            existingFound.radius = found.radius;
+            var updatedFound = await _foundRepository.UpdateFoundAsync(existingFound);
+            return Ok(updatedFound);
+        }
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteFound(Guid id)
+        {
+            var existingFound = await _foundRepository.GetFoundByIdAsync(id);
+            if (existingFound == null)
+            {
+                return NotFound();
+            }
+            await _foundRepository.DeleteFoundByIdAsync(id);
+            return Ok(existingFound);
         }
     }
 }
