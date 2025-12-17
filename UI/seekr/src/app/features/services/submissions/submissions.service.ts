@@ -10,6 +10,6 @@ export class SubmissionsService {
 
   constructor(private http : HttpClient) { }
     getALLSubmissonsByUser():Observable<Submissions[]>{
-     return this.http.get<Submissions[]>("http://localhost:50542/api/Submissions")
+     return this.http.get<Submissions[]>("https://localhost:50542/api/Submissions")
     }
 }

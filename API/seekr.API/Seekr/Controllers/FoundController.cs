@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Seekr.Models.DomainModels;
 using Seekr.Models.DTO;
 using Seekr.Repositories.Interface;
@@ -67,6 +68,7 @@ namespace Seekr.Controllers
         }
         [HttpGet]
         [Route("GetFoundList")]
+        [Authorize(Roles ="Administrator")]
         public async Task<IEnumerable<Found>> GetFoundList()
         {
             var result = await _foundRepository.GetFoundListAsync();
@@ -74,6 +76,7 @@ namespace Seekr.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> UpdateFound(FoundDTO found)
         {
             var existingFound = await _foundRepository.GetFoundByIdAsync(found.Id);
@@ -96,6 +99,7 @@ namespace Seekr.Controllers
         }
         [HttpDelete]
         [Route("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteFound(Guid id)
         {
             var existingFound = await _foundRepository.GetFoundByIdAsync(id);

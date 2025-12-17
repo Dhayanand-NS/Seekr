@@ -29,28 +29,28 @@ export class LostService {
     modal.latitude = this.latitude;
     modal.longitude = this.longitude;
     console.log(modal);
-    return this.Http.post<void>('http://localhost:50542/api/Lost', modal);
+    return this.Http.post<void>('https://localhost:50542/api/Lost', modal);
   }
 
   getlosandfoundbyuser(): Observable<LostFound[]> {
-    return this.Http.get<LostFound[]>('http://localhost:50542/api/Lost');
+    return this.Http.get<LostFound[]>('https://localhost:50542/api/Lost');
   }
 
   getLostByID(id: string): Observable<LostFoundDTO> {
     console.log('Entered Lost Service to get Lost details');
-    return this.Http.get<LostFoundDTO>(`http://localhost:50542/api/Lost/${id}`);
+    return this.Http.get<LostFoundDTO>(`https://localhost:50542/api/Lost/${id}`);
   }
 
   getALLLost(): Observable<LostFoundDTO[]> {
-    return this.Http.get<LostFoundDTO[]>('http://localhost:50542/api/Lost/GetLostList');
+    return this.Http.get<LostFoundDTO[]>('https://localhost:50542/api/Lost/GetLostList');
   }
 
   deleteLost(lostId : string){
-    return this.Http.delete<LostFound>(`http://localhost:50542/api/Lost/${lostId}`);
+    return this.Http.delete<LostFound>(`https://localhost:50542/api/Lost/${lostId}`);
   }
   updateLost(modal? : LostFound):Observable<LostFound>{
     modal!.latitude = this.latitude;
     modal!.longitude = this.longitude;
-   return this.Http.put<LostFound>(`http://localhost:50542/api/Lost`, modal);
+   return this.Http.put<LostFound>(`https://localhost:50542/api/Lost`, modal);
   }
 }

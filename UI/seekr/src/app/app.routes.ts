@@ -6,6 +6,7 @@ import { SubmissionsComponent } from './features/submissions/submissions.compone
 import { MatchfoundComponent } from './features/matchfound/matchfound.component';
 import { LostandfoundListComponent } from './features/lostandfound-list/lostandfound-list.component';
 import { EditLostandfoundComponent } from './features/edit-lostandfound/edit-lostandfound.component';
+import { LoginComponent } from './features/auth/login/login.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path:'admin/lostandfoundlist/editlostandfound/:type/:id',
         component :EditLostandfoundComponent
+    },
+    {
+        path : 'Login',
+        component : LoginComponent
     }
 ];

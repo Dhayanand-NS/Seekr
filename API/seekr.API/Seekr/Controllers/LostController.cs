@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Seekr.Models.DomainModels;
 using Seekr.Models.DTO;
 using Seekr.Repositories.Implementation;
@@ -67,6 +68,7 @@ namespace Seekr.Controllers
         }
         [HttpGet]
         [Route("GetLostList")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IEnumerable<Lost>> GetLostList()
         {
             var result = await _lostRepository.GetLostListAsync();
@@ -74,6 +76,7 @@ namespace Seekr.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> UpdateLost(LostDTO lost)
         {
             var existingLost = await _lostRepository.GetLostByIdAsync(lost.Id);
@@ -97,6 +100,7 @@ namespace Seekr.Controllers
 
         [HttpDelete]
         [Route("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteFound(Guid id)
         {
             var existingFound = await _lostRepository.GetLostByIdAsync(id);

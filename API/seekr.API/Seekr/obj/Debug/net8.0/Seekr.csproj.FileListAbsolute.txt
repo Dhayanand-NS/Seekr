@@ -171,3 +171,5 @@ D:\Codes\Projects\seekr\API\seekr.API\Seekr\obj\Debug\net8.0\refint\Seekr.dll
 D:\Codes\Projects\seekr\API\seekr.API\Seekr\obj\Debug\net8.0\Seekr.pdb
 D:\Codes\Projects\seekr\API\seekr.API\Seekr\obj\Debug\net8.0\Seekr.genruntimeconfig.cache
 D:\Codes\Projects\seekr\API\seekr.API\Seekr\obj\Debug\net8.0\ref\Seekr.dll
+D:\Codes\Projects\seekr\API\seekr.API\Seekr\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Codes\Projects\seekr\API\seekr.API\Seekr\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
