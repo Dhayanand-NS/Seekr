@@ -1,15 +1,38 @@
 <div class="container mt-3">
+            <form #form="ngForm" (ngSubmit)="OnFormSubmit()">
+            <div class="d-flex flex-row justify-content-between ml-3">
+                <label class="form-label">Type</label>
+                <select class="form-select w-30" name="Type" [(ngModel)]="submissionFilter.Type" aria-label="Default select example">
+                    <option selected>Select Type</option>
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
+                </select>
+                <label class="form-label">Match Found</label>
+                <select class="form-select w-30" name="MatchFound" [(ngModel)]="submissionFilter.MatchFound" aria-label="Default select example">
+                    <option selected>Select</option>
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+                <button type="submit" class="btn btn-light">Search</button>
+                <select class="form-select w-10" (ngModelChange)="getDataByPage(submissionFilter.PageNumber, $event)" name="MatchFound" [(ngModel)]="submissionFilter.PageSize" aria-label="Default select example">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="20">20</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                </select>
+            </div>
+        </form>
     <ng-container *ngIf="submissions$ | async as data">
-        <div class="row row-cols-3 row-cols-md-2 g-4" >
+        <div class="row row-cols-3 row-cols-md-3 g-4 mt-3" >
             <div class="col" *ngFor="let item of data">
                 <div class="card h-100">
-                    <img src="/8767132.jpg" style="width: 300px; height: 300px;" class="card-img-top" alt="submission image">
+                    <img src="/8767132.jpg" class="card-img-top submission-img" alt="submission image">
                     <div class="card-body">
                         <h5 class="card-title">{{item.title}}</h5>
                         <p class="card-text">{{item.description}}</p>
                         <p class="card-text">Type: {{item.type}}</p>
                         <p class="card-text">Date Posted:</p>
-                        <p class="card-text">Contact: {{item.contactinfo}}</p>
+                        <p class="card-text">Contact: {{item.contactInfo}}</p>
                         <ng-container *ngIf="item.isMatched ==true; else notMatched">
                         <a [routerLink]="['/matchfound',item.matchedLatitude, item.matchedLongitude, item.matchedId,item.type]" class="btn btn-primary">Match</a>
                         </ng-container>
@@ -20,5 +43,10 @@
                 </div>
             </div>
         </div>
+    <ul class="pagination mt-3">
+        <li class="page-item"><a class="page-link" (click)="getDataByPage(currentPage-1,submissionFilter.PageSize)">Previous</a></li>
+        <li *ngFor="let item of list;let index = index" class="page-item"><a (click)="getDataByPage(index+1,submissionFilter.PageSize)"class="page-link">{{index+1}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="getDataByPage(currentPage+1,submissionFilter.PageSize)">Next</a></li>
+    </ul>
     </ng-container>
 </div>

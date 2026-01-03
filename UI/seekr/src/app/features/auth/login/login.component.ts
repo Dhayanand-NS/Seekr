@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,10 +23,11 @@ export class LoginComponent {
   //   }
   // }
   authService = inject (AuthService);
+  router = inject(Router);
   OnFormSubmit(){
     this.authService.LoginSubmit(this.loginForm.getRawValue().userName ?? undefined,this.loginForm.getRawValue().password ?? undefined).subscribe({
       next : (Response) =>{
-       console.log(Response);
+       this.router.navigateByUrl('/');
       }
     })
   }

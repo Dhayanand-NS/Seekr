@@ -19,9 +19,9 @@ namespace Seekr.Repositories.Implementation
             await _dbContext.SaveChangesAsync();
             return lost;
         }
-        public async Task<IEnumerable<Lost>> GetAllLostAsync()
+        public async Task<IEnumerable<Lost>> GetAllLostByUserAsync(Guid UserID)
         {
-            return _dbContext.Lost.ToList();
+            return _dbContext.Lost.Where(x=> x.UserId == UserID).ToList();
         }
         public async Task<Lost> GetLostByIdAsync(Guid id)
         {

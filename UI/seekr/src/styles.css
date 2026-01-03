@@ -2,3 +2,16 @@
   height: 630px;
   width: 100%;
 }
+
+.w-30 {
+  width: 30% !important;
+}
+
+.w-10 {
+  width: 10% !important;
+}
+
+.submission-img {
+  width: 100%;
+  height: 100%;
+}

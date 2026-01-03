@@ -17,7 +17,7 @@ export class FoundService {
     modal.latitude = this.latitude;
     modal.longitude = this.longitude;
     console.log(modal);
-    return this.Http.post<void>('https://localhost:50542/api/Found', modal);
+    return this.Http.post<void>('https://localhost:50542/api/Found', modal,{withCredentials:true});
   }
 
   latestcoordinates(latitude?: number, longitude?: number) {
@@ -30,15 +30,15 @@ export class FoundService {
   }
 
     getALLFound(): Observable<LostFoundDTO[]> {
-    return this.Http.get<LostFoundDTO[]>('https://localhost:50542/api/Found/GetFoundList');
+    return this.Http.get<LostFoundDTO[]>('https://localhost:50542/api/Found/GetFoundList',{withCredentials:true});
   }
     deleteFound(founId : string){
-    return this.Http.delete<LostFound>(`https://localhost:50542/api/Found/${founId}`);
+    return this.Http.delete<LostFound>(`https://localhost:50542/api/Found/${founId}`,{withCredentials:true});
   }
 
   updateFound(modal? : LostFound):Observable<LostFound>{
     modal!.latitude = this.latitude;
     modal!.longitude = this.longitude;
-   return this.Http.put<LostFound>(`https://localhost:50542/api/Found`, modal);
+   return this.Http.put<LostFound>(`https://localhost:50542/api/Found`, modal,{withCredentials:true});
   }
 }

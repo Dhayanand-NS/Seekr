@@ -1,5 +1,41 @@
 [
   {
+    "ContainingType": "Seekr.Controllers.LostandFoundList",
+    "Method": "GetAllLostAndFoundItems",
+    "RelativePath": "api/admin/LostandFoundList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filters",
+        "Type": "Seekr.Models.DTO.LostFoundListFilter",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Seekr.Controllers.LostandFoundList",
+    "Method": "GetLostAndFoundCount",
+    "RelativePath": "api/admin/LostandFoundList/Count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Seekr.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -69,7 +105,7 @@
   },
   {
     "ContainingType": "Seekr.Controllers.FoundController",
-    "Method": "GetAllFound",
+    "Method": "GetAllFoundByUser",
     "RelativePath": "api/Found",
     "HttpMethod": "GET",
     "IsController": true,
@@ -183,7 +219,7 @@
   },
   {
     "ContainingType": "Seekr.Controllers.LostController",
-    "Method": "GetAllLostandFound",
+    "Method": "GetAllLostByUser",
     "RelativePath": "api/Lost",
     "HttpMethod": "GET",
     "IsController": true,
@@ -283,10 +319,36 @@
     "ContainingType": "Seekr.Controllers.SubmissionsController",
     "Method": "GetAllSubmissionsByUser",
     "RelativePath": "api/Submissions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filters",
+        "Type": "Seekr.Models.DTO.SubmissionFilter",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Seekr.Controllers.SubmissionsController",
+    "Method": "GetMySubmissionsCount",
+    "RelativePath": "api/Submissions/count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

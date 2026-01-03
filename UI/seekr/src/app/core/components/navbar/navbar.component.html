@@ -6,15 +6,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto">
+        @if(authService.user() && authService.user()?.roles?.includes("User")){
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['map']">Map</a>
+          <a class="nav-link" [routerLink]="['lostandfound']">Report</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" [routerLink]="['submissions']">Submissions</a>
         </li>
+        }
+        @if(authService.user() && authService.user()?.roles?.includes("Administrator")){
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['admin/lostandfoundlist']">Manage Reports</a>
+        </li>
+        }
       </ul>
       <div class="flex gap-4 align-items-center">
         @if(authService.user()){

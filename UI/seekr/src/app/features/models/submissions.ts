@@ -7,7 +7,7 @@ export interface Submissions{
     longitude?: number,
     location:string,
     date : Date;
-    contactinfo: string,
+    contactInfo: string,
     radius : number,
     isMatched : boolean,
     matchedId : string,

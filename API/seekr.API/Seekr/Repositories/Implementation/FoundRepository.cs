@@ -20,9 +20,9 @@ namespace Seekr.Repositories.Implementation
             await _dbContext.SaveChangesAsync();
             return found;
         }
-        public async Task<IEnumerable<Found>> GetAllFoundAsync()
+        public async Task<IEnumerable<Found>> GetAllFoundByUserAsync(Guid UserId)
         {
-            return _dbContext.Found.ToList();
+            return _dbContext.Found.Where(x=>x.UserId == UserId).ToList();
         }
         public async Task<Found> GetFoundByIdAsync(Guid id)
         {

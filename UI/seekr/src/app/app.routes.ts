@@ -7,6 +7,8 @@ import { MatchfoundComponent } from './features/matchfound/matchfound.component'
 import { LostandfoundListComponent } from './features/lostandfound-list/lostandfound-list.component';
 import { EditLostandfoundComponent } from './features/edit-lostandfound/edit-lostandfound.component';
 import { LoginComponent } from './features/auth/login/login.component';
+import { adminGuard } from './features/auth/guards/admin-guard/admin.guard';
+import { userGuard } from './features/auth/guards/user-guard/user.guard';
 
 export const routes: Routes = [
     {
@@ -19,23 +21,28 @@ export const routes: Routes = [
     },
     {
         path:'lostandfound',
-        component:LostandfoudComponent
+        component:LostandfoudComponent,
+        canActivate :[userGuard]
     },
     {
         path:'submissions',
-        component:SubmissionsComponent
+        component:SubmissionsComponent,
+        canActivate :[userGuard]
     },
     {
         path:'matchfound/:latitude/:longitude/:matchedId/:type',
-        component:MatchfoundComponent
+        component:MatchfoundComponent,
+        canActivate :[userGuard]
     },
     {
         path:'admin/lostandfoundlist',
-        component :LostandfoundListComponent
+        component :LostandfoundListComponent,
+        canActivate :[adminGuard]
     },
     {
         path:'admin/lostandfoundlist/editlostandfound/:type/:id',
-        component :EditLostandfoundComponent
+        component :EditLostandfoundComponent,
+        canActivate :[adminGuard]
     },
     {
         path : 'Login',

@@ -4,6 +4,8 @@ using Seekr.Models.DomainModels;
 using Seekr.Models.DTO;
 using Seekr.Repositories.Implementation;
 using Seekr.Repositories.Interface;
+using System.Data;
+using System.Security.Claims;
 
 namespace Seekr.Controllers
 {
@@ -18,8 +20,10 @@ namespace Seekr.Controllers
         }
 
         [HttpPost]
+        //[Authorize(Roles = "Administrator,User")]
         public async Task<IActionResult> AddLost(LostDTO lost)
         {
+            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var Lost = new Lost
             {
                 Title = lost.Title,
@@ -32,7 +36,8 @@ namespace Seekr.Controllers
                 DatePosted = DateTime.UtcNow,
                 ContactInfo = lost.ContactInfo,
                 Date = lost.Date,
-                radius = lost.radius
+                radius = lost.radius,
+                UserId = Guid.Parse(userID)
             };
             var result = await _lostRepository.AddLostAsync(Lost);
 
@@ -54,9 +59,10 @@ namespace Seekr.Controllers
             return Ok(LostDTO);
         }
         [HttpGet]
-        public async Task<IEnumerable<Lost>> GetAllLostandFound()//This method should be renamed as GetAllLostByUser later
+        public async Task<IEnumerable<Lost>> GetAllLostByUser()
         {
-            var result = await _lostRepository.GetAllLostAsync();
+            var userID = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var result = await _lostRepository.GetAllLostByUserAsync(userID);
             return result;
         }
 

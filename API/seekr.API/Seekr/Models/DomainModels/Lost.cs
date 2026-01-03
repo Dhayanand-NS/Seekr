@@ -14,5 +14,6 @@
         public string ContactInfo { get; set; }
         public string Date { get; set; }
         public int radius { get; set; }
+        public Guid UserId { get; set; }
     }
 }

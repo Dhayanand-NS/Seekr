@@ -29,7 +29,7 @@ export class LostService {
     modal.latitude = this.latitude;
     modal.longitude = this.longitude;
     console.log(modal);
-    return this.Http.post<void>('https://localhost:50542/api/Lost', modal);
+    return this.Http.post<void>('https://localhost:50542/api/Lost', modal,{withCredentials:true});
   }
 
   getlosandfoundbyuser(): Observable<LostFound[]> {
@@ -42,15 +42,15 @@ export class LostService {
   }
 
   getALLLost(): Observable<LostFoundDTO[]> {
-    return this.Http.get<LostFoundDTO[]>('https://localhost:50542/api/Lost/GetLostList');
+    return this.Http.get<LostFoundDTO[]>('https://localhost:50542/api/Lost/GetLostList',{withCredentials:true});
   }
 
   deleteLost(lostId : string){
-    return this.Http.delete<LostFound>(`https://localhost:50542/api/Lost/${lostId}`);
+    return this.Http.delete<LostFound>(`https://localhost:50542/api/Lost/${lostId}`,{withCredentials:true});
   }
   updateLost(modal? : LostFound):Observable<LostFound>{
     modal!.latitude = this.latitude;
     modal!.longitude = this.longitude;
-   return this.Http.put<LostFound>(`https://localhost:50542/api/Lost`, modal);
+   return this.Http.put<LostFound>(`https://localhost:50542/api/Lost`, modal,{withCredentials:true});
   }
 }

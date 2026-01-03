@@ -1,5 +1,24 @@
 <div class="container">
-    <ng-container *ngIf="found$ | async as founditems ">
+        <form #form="ngForm" (ngSubmit)="OnFormSubmit()">
+            <div class="d-flex flex-row justify-content-between ml-3 mt-5">
+                <label class="form-label">Type</label>
+                <select class="form-select w-30" name="Type" [(ngModel)]="filter.Type" aria-label="Default select example">
+                    <option selected>Select Type</option>
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
+                </select>
+                <label class="form-label">Item</label>
+                <input type="text" class="form-control w-30" name="Item" [(ngModel)]="filter.Item">
+                <button type="submit" class="btn btn-light">Search</button>
+                <select class="form-select w-10" (ngModelChange)="getDataByPage(filter.PageNumber, $event)" name="MatchFound" [(ngModel)]="filter.PageSize" aria-label="Default select example">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="20">20</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                </select>
+            </div>
+        </form>
+    <ng-container *ngIf="lostfoundlist$ | async as items ">
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
@@ -12,19 +31,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let found of founditems">
-                    <td>{{found.title}}</td>
-                    <td>{{found.description}}</td>
-                    <td>{{found.location}}</td>
-                    <td>{{found.type}}</td>
-                    <td><a [routerLink]="['/admin/lostandfoundlist/editlostandfound',found.type, found.id]">Edit</a></td>
-                    <td><button class="btn btn-danger" type="button" (click)="DeleteFound(found.id)">Delete</button></td>
+                <tr *ngFor="let item of items">
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.type}}</td>
+                    <td><a [routerLink]="['/admin/lostandfoundlist/editlostandfound',item.type, item.id]">Edit</a></td>
+                    <td><button class="btn btn-danger" type="button" (click)="DeleteFound(item.id)">Delete</button></td>
 
                 </tr>
             </tbody>
         </table>
+    <ul class="pagination mt-3">
+        <li class="page-item"><a class="page-link" (click)="getDataByPage(currentPage-1,filter.PageSize)">Previous</a></li>
+        <li *ngFor="let item of list;let index = index" class="page-item"><a (click)="getDataByPage(index+1,filter.PageSize)"class="page-link">{{index+1}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="getDataByPage(currentPage+1,filter.PageSize)">Next</a></li>
+    </ul>
     </ng-container>
-    <ng-container *ngIf="lost$ | async as lostitem ">
+    <!-- <ng-container *ngIf="lost$ | async as lostitem ">
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
@@ -47,5 +71,5 @@
                 </tr>
             </tbody>
         </table>
-    </ng-container>
+    </ng-container> -->
 </div>

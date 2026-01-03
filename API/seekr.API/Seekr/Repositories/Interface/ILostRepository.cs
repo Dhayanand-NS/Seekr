@@ -6,7 +6,7 @@ namespace Seekr.Repositories.Interface
     {
         Task<Lost> AddLostAsync(Lost lostandFound);
 
-        Task<IEnumerable<Lost>> GetAllLostAsync();
+        Task<IEnumerable<Lost>> GetAllLostByUserAsync(Guid userID);
 
         Task<Lost> GetLostByIdAsync(Guid id);
         Task<IEnumerable<Lost>> GetLostListAsync();

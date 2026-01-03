@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LostFound } from '../models/lostfound';
 import { LostService } from '../services/lost/lost.service';
 import { FoundService } from '../services/found/found.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { LostFoundDTO } from '../models/lostfoundDTO';
+import { LostfoundlistService } from '../services/lostfoundlist/lostfoundlist.service';
+import { lostfoundListFilter } from '../models/lostfoundListFilter';
 
 @Component({
   selector: 'app-lostandfound-list',
@@ -15,30 +16,66 @@ import { LostFoundDTO } from '../models/lostfoundDTO';
   styleUrl: './lostandfound-list.component.css',
 })
 export class LostandfoundListComponent implements OnInit {
-  lost$?: Observable<LostFoundDTO[]>;
-  found$?: Observable<LostFoundDTO[]>;
+  lostfoundlist$?: Observable<LostFoundDTO[]>;
+  filter : lostfoundListFilter;
+  currentPage = 1;
+  list:number[] =[];
+  totalCount? : number;
   constructor(
     private lostService: LostService,
-    private foundService: FoundService,
-    private router: Router
-  ) {}
-
+    private foundService: FoundService
+  ) {
+    this.filter={
+      Type : null,
+      Item : null,
+      Date : new Date,
+      PageNumber : 1,
+      PageSize : 10
+    }
+  }
+  lostfoundlistservice = inject(LostfoundlistService);
   ngOnInit(): void {
-    this.lost$ = this.lostService.getALLLost();
-    this.found$ = this.foundService.getALLFound();
+    this.lostfoundlistservice.GetLostFoundCount().subscribe({
+      next : (res)=>{
+          this.totalCount = res;
+          this.list= new Array(Math.ceil(res/this.filter.PageSize));
+            this.lostfoundlist$ = this.lostfoundlistservice.GetLostFoundList(this.filter);
+
+      }
+    });
   }
   DeleteFound(foundId: string) {
     this.foundService.deleteFound(foundId).subscribe({
       next: (res) => {
-        this.ngOnInit();// calls the ngoninit method which is above declared, so it refreshes the page again 
+        this.ngOnInit();// calls the ngOninit method which is above declared, so it refreshes the page again 
       },
     });
   }
   DeleteLost(lostId: string) {
     this.lostService.deleteLost(lostId).subscribe({
       next: (res) => {
-        this.ngOnInit();// calls the ngoninit method which is above declared, so it refreshes the page again 
+        this.ngOnInit();// calls the ngOninit method which is above declared, so it refreshes the page again 
       },
     });
+  }
+    OnFormSubmit(){
+    this.lostfoundlist$ = this.lostfoundlistservice.GetLostFoundList(this.filter);
+  }
+    getDataByPage(pagenumber : number, pageSize : number){
+    if(pagenumber > this.list.length){
+      return
+    }
+    if(pagenumber < 1){
+      return
+    }
+    this.filter={
+      Type : null,
+      Item : null,
+      Date : new Date,
+      PageNumber : pagenumber,
+      PageSize : pageSize
+    }
+    this.currentPage = this.filter.PageNumber;
+    this.lostfoundlist$ = this.lostfoundlistservice.GetLostFoundList(this.filter);
   }
 }

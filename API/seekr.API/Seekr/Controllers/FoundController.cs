@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Seekr.Models.DomainModels;
 using Seekr.Models.DTO;
 using Seekr.Repositories.Interface;
+using System.Security.Claims;
 
 namespace Seekr.Controllers
 {
@@ -31,7 +32,8 @@ namespace Seekr.Controllers
                 DatePosted = DateTime.UtcNow,
                 ContactInfo = found.ContactInfo,
                 Date = found.Date,
-                radius = found.radius
+                radius = found.radius,
+                UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))
             };
             var result = await _foundRepository.AddFoundAsync(Found);
 
@@ -53,9 +55,10 @@ namespace Seekr.Controllers
             return Ok(foundDTO);
         }
         [HttpGet]
-        public async Task<IEnumerable<Found>> GetAllFound()//This method should be renamed as GetAllFoundByUser later
+        public async Task<IEnumerable<Found>> GetAllFoundByUser()
         {
-            var result = await _foundRepository.GetAllFoundAsync();
+            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var result = await _foundRepository.GetAllFoundByUserAsync(userId);
 
             return result;
         }
