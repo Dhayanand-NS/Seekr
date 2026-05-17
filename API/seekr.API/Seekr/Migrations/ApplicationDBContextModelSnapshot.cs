@@ -28,6 +28,9 @@ namespace Seekr.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("ClaimedBy")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("ContactInfo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -56,6 +59,10 @@ namespace Seekr.Migrations
 
                     b.Property<double>("Longitude")
                         .HasColumnType("float");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -82,6 +89,9 @@ namespace Seekr.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("ClaimedBy")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("ContactInfo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -110,6 +120,10 @@ namespace Seekr.Migrations
 
                     b.Property<double>("Longitude")
                         .HasColumnType("float");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()

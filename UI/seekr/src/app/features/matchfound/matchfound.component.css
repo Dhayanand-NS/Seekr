@@ -1,0 +1,144 @@
+.match-page {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.match-status {
+  position: relative;
+  overflow: hidden;
+  gap: 1rem;
+  min-height: 138px;
+  padding: 1.35rem 1.5rem;
+  color: #163029;
+  background:
+    linear-gradient(135deg, rgba(25, 135, 84, 0.14), rgba(13, 110, 253, 0.1)),
+    #ffffff;
+  border: 1px solid rgba(25, 135, 84, 0.22);
+  border-left: 6px solid #198754;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(20, 44, 36, 0.08);
+}
+
+.status-copy {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.status-label,
+.details-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 0.55rem;
+  padding: 0.3rem 0.55rem;
+  color: #0f5132;
+  background: rgba(25, 135, 84, 0.12);
+  border: 1px solid rgba(25, 135, 84, 0.18);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.status-copy h2 {
+  margin: 0;
+  color: #13231d;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.status-copy p {
+  margin: 0.45rem 0 0;
+  color: #49635a;
+  font-size: 0.98rem;
+}
+
+.status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  position: relative;
+  z-index: 1;
+}
+
+.status-actions .btn {
+  margin-right: 0 !important;
+  min-height: 42px;
+  font-weight: 600;
+}
+
+.match-layout {
+  row-gap: 1.25rem;
+}
+
+.map-panel {
+  overflow: hidden;
+  border: 1px solid #d8e2dc;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(15, 37, 31, 0.08);
+}
+
+.match-details {
+  height: 100%;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #d8e2dc;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(15, 37, 31, 0.08);
+}
+
+.match-details h4 {
+  margin-bottom: 1.15rem;
+  color: #18251f;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.match-details .form-label {
+  margin-bottom: 0.3rem;
+  color: #40524b;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.match-details .form-control {
+  min-height: 42px;
+  color: #20352d;
+  background-color: #f8fbf9;
+  border-color: #d8e2dc;
+}
+
+@media (max-width: 991.98px) {
+  .match-status {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+
+  .status-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .match-page {
+    padding-top: 1rem;
+  }
+
+  .match-status,
+  .match-details {
+    padding: 1rem;
+  }
+
+  .status-copy h2 {
+    font-size: 1.2rem;
+  }
+
+  .status-actions .btn {
+    width: 100%;
+  }
+}

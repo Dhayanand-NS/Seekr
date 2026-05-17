@@ -1,6 +1,7 @@
-﻿using Seekr.Repositories.Interface;
+﻿using Microsoft.EntityFrameworkCore;
 using Seekr.Data;
 using Seekr.Models.DomainModels;
+using Seekr.Repositories.Interface;
 
 namespace Seekr.Repositories.Implementation
 {
@@ -30,7 +31,8 @@ namespace Seekr.Repositories.Implementation
         }
         public async Task<IEnumerable<Lost>> GetLostListAsync()
         {
-            return _dbContext.Lost.ToList();
+            IQueryable<Lost> test =  _dbContext.Lost.Where(x=>x.Type == "Lost").AsQueryable();
+            return test;
         }
         public async Task<Lost> UpdateLostAsync(Lost lost)
         {

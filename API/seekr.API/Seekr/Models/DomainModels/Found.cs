@@ -15,5 +15,8 @@
         public string Date { get; set; }
         public int radius { get; set; }
         public Guid UserId { get; set; }
+        public string Status { get; set; }
+        public Guid ClaimedBy { get; set; }
+
     }
 }

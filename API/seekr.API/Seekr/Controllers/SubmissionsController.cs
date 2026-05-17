@@ -55,7 +55,8 @@ namespace Seekr.Controllers
                 Date = lost.Date,
                 radius = lost.radius,
                 IsMatched = false,
-                MatchedId = null
+                MatchedId = null,
+                CurrentId = null
             }));
             SubmissionsDTO.AddRange(myFoundItems.Select(found => new SubmissionsDTO
             {
@@ -71,7 +72,8 @@ namespace Seekr.Controllers
                 Date = found.Date,
                 radius = found.radius,
                 IsMatched = false,
-                MatchedId = null
+                MatchedId = null,
+                CurrentId = null
             }));
             // Matching Logic
             foreach (var lost in myLostItems)
@@ -81,14 +83,15 @@ namespace Seekr.Controllers
                     var distance = await GetDistance(lost.Latitude, lost.Longitude, found.Latitude, found.Longitude);
                     if (distance <= Math.Max(lost.radius, found.radius))
                     {
-                        var lostDTO = SubmissionsDTO.Where(s => s.Title == lost.Title && s.Type == "Lost").FirstOrDefault();
-                        var foundDTO = foundItems.Where(s => s.Title == found.Title && s.Type == "Found").FirstOrDefault();
+                        var lostDTO = SubmissionsDTO.Where(s => s.Title == lost.Title && s.Type == "Lost" && s.Title == found.Title).FirstOrDefault();
+                        var foundDTO = foundItems.Where(s => s.Title == found.Title && s.Type == "Found" && s.Title == lost.Title && ((found.ClaimedBy == userId && (found.Status != "Claimed" || found.Status != "Confirmed" || found.Status != "Resolved")) || found.Status == "Pending")).FirstOrDefault();
                         if (lostDTO != null && foundDTO != null)
                         {
                             lostDTO.IsMatched = true;
                             lostDTO.MatchedId = found.Id;
                             lostDTO.MatchedLatitude = found.Latitude;
                             lostDTO.MatchedLongitude = found.Longitude;
+                            lostDTO.CurrentId = lost.Id;
 
                             //foundDTO.IsMatched = true;
                             //foundDTO.MatchedId = lost.Id;
@@ -105,8 +108,8 @@ namespace Seekr.Controllers
                     var distance = await GetDistance(lost.Latitude, lost.Longitude, found.Latitude, found.Longitude);
                     if (distance <= Math.Max(lost.radius, found.radius))
                     {
-                        var lostDTO = lostItems.Where(s => s.Title == lost.Title && s.Type == "Lost").FirstOrDefault();
-                        var foundDTO = SubmissionsDTO.Where(s => s.Title == found.Title && s.Type == "Found").FirstOrDefault();
+                        var lostDTO = lostItems.Where(s => s.Title == lost.Title && s.Type == "Lost" && s.Title == found.Title && found.Status != "Resolved").FirstOrDefault();
+                        var foundDTO = SubmissionsDTO.Where(s => s.Title == found.Title && s.Type == "Found" && s.Title == lost.Title).FirstOrDefault();
                         if (lostDTO != null && foundDTO != null)
                         {
                             //lostDTO.IsMatched = true;
@@ -118,6 +121,7 @@ namespace Seekr.Controllers
                             foundDTO.MatchedId = lost.Id;
                             foundDTO.MatchedLatitude = lost.Latitude;
                             foundDTO.MatchedLongitude = lost.Longitude;
+                            foundDTO.CurrentId = found.Id;
                         }
                     }
                 }

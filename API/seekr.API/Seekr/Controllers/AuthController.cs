@@ -49,7 +49,7 @@ namespace Seekr.Controllers
                     {
                         HttpOnly = true,
                         Secure = true,
-                        SameSite = SameSiteMode.Lax,
+                        SameSite = SameSiteMode.None,
                         Expires = DateTime.UtcNow.AddMinutes(15)
                     });
                     return Ok(response);

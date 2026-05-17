@@ -17,6 +17,7 @@
         public Guid? MatchedId { get; set; }
         public double MatchedLatitude { get; set; }
         public double MatchedLongitude { get; set; }
+        public Guid? CurrentId { get; set; }
 
     }
 }

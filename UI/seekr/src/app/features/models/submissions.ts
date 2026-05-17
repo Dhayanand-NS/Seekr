@@ -12,5 +12,6 @@ export interface Submissions{
     isMatched : boolean,
     matchedId : string,
     matchedLatitude : number,
-    matchedLongitude : number
+    matchedLongitude : number,
+    currentId : number
 }

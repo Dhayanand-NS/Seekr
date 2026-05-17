@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Deployments\Seekr\API</_PublishTargetUrl>
+    <History>True|2026-02-13T02:27:50.2912537Z||;False|2026-02-13T07:57:45.3238333+05:30||;True|2026-02-12T08:10:47.1221682+05:30||;False|2026-02-12T08:10:40.4832234+05:30||;True|2026-02-12T08:09:03.7484149+05:30||;False|2026-02-12T08:08:50.4950027+05:30||;True|2026-02-12T07:59:21.0469825+05:30||;False|2026-02-12T07:59:14.8393974+05:30||;True|2026-02-12T07:45:40.4018524+05:30||;False|2026-02-12T07:45:34.1541748+05:30||;True|2026-02-12T07:12:01.3860097+05:30||;False|2026-02-12T07:11:36.2785886+05:30||;True|2026-02-06T07:31:52.3690911+05:30||;False|2026-02-06T07:31:19.0515427+05:30||;True|2026-02-05T07:48:18.8532357+05:30||;True|2026-02-02T20:18:24.4112535+05:30||;False|2026-02-02T20:17:10.3533152+05:30||;True|2026-02-02T19:58:20.2440809+05:30||;True|2026-02-02T08:00:30.0637819+05:30||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="SeekrConnectionString">
+      <Value>Server=PC-DHAYANAND\THESERVER%3bDataBase=SeekrDB%3bUser Id=sa%3bPassword=Dhaya%402003%3bTrustServerCertificate=true%3bTrusted_Connection=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

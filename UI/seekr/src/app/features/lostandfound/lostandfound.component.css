@@ -1,0 +1,95 @@
+.report-page {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.page-heading {
+  margin-bottom: 1.25rem;
+}
+
+.page-heading span {
+  display: inline-flex;
+  margin-bottom: 0.55rem;
+  padding: 0.32rem 0.6rem;
+  color: #0f5132;
+  background: rgba(25, 135, 84, 0.12);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: #14251f;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.page-heading p {
+  margin: 0.45rem 0 0;
+  color: #5a6f66;
+}
+
+.report-layout {
+  row-gap: 1.25rem;
+}
+
+.map-panel,
+.form-panel {
+  border: 1px solid #d8e2dc;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(15, 37, 31, 0.08);
+}
+
+.map-panel {
+  overflow: hidden;
+}
+
+.form-panel {
+  height: 100%;
+  padding: 1.25rem;
+  background: #ffffff;
+}
+
+.form-panel h4 {
+  margin-bottom: 1rem;
+  color: #18251f;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form-label {
+  margin-bottom: 0.3rem;
+  color: #40524b;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.form-control {
+  min-height: 42px;
+  color: #20352d;
+  background-color: #f8fbf9;
+  border-color: #d8e2dc;
+}
+
+.form-note {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.report-modal {
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(15, 37, 31, 0.18);
+}
+
+@media (max-width: 575.98px) {
+  .report-page {
+    padding-top: 1rem;
+  }
+
+  .form-panel {
+    padding: 1rem;
+  }
+}

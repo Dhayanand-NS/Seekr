@@ -30,7 +30,7 @@ export const routes: Routes = [
         canActivate :[userGuard]
     },
     {
-        path:'matchfound/:latitude/:longitude/:matchedId/:type',
+        path:'matchfound/:latitude/:longitude/:matchedId/:type/:currentId',
         component:MatchfoundComponent,
         canActivate :[userGuard]
     },

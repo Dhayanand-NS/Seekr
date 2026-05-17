@@ -26,6 +26,8 @@ export class LostandfoudComponent implements OnInit {
     date:new FormControl(new Date(),{nonNullable: true,validators :[Validators.required]}),
     contactinfo: new FormControl('',{nonNullable: true,validators :[Validators.required]}),
     radius:new FormControl(500,{nonNullable:true}),
+    status : new FormControl('',{nonNullable:true}),
+    claimedby : new FormControl('00000000-0000-0000-0000-000000000000',{nonNullable:true})
   });
   isLostFoundModalvisible: boolean = false;
   lostorfound?: string;

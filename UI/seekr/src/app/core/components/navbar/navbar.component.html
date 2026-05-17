@@ -1,14 +1,18 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg seekr-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Seekr</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <span class="brand-mark">S</span>
+      Seekr
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto">
         @if(authService.user() && authService.user()?.roles?.includes("User")){
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['lostandfound']">Report</a>
@@ -23,13 +27,13 @@
         </li>
         }
       </ul>
-      <div class="flex gap-4 align-items-center">
+      <div class="nav-account">
         @if(authService.user()){
           <span>{{authService.user()?.email}}</span>
-          <button (click)="LogOut()" type="button" class="btn btn-primary">Logout</button>
+          <button (click)="LogOut()" type="button" class="btn btn-success">Logout</button>
         }
         @else{
-           <a [routerLink]="['Login']" class="btn btn-primary">Login</a>
+           <a [routerLink]="['Login']" class="btn btn-success">Login</a>
         }
       </div>
     </div>

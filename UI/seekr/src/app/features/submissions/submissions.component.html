@@ -1,52 +1,74 @@
-<div class="container mt-3">
-            <form #form="ngForm" (ngSubmit)="OnFormSubmit()">
-            <div class="d-flex flex-row justify-content-between ml-3">
+<div class="container submissions-page">
+    <div class="page-heading">
+        <span>Your reports</span>
+        <h1>Submissions</h1>
+        <p>Filter your lost and found reports, then open matched items for review.</p>
+    </div>
+    <form #form="ngForm" (ngSubmit)="OnFormSubmit()" class="filter-panel">
+        <div class="filter-grid">
+            <div>
                 <label class="form-label">Type</label>
-                <select class="form-select w-30" name="Type" [(ngModel)]="submissionFilter.Type" aria-label="Default select example">
+                <select class="form-select" name="Type" [(ngModel)]="submissionFilter.Type"
+                    aria-label="Default select example">
                     <option selected>Select Type</option>
                     <option value="Lost">Lost</option>
                     <option value="Found">Found</option>
                 </select>
+            </div>
+            <div>
                 <label class="form-label">Match Found</label>
-                <select class="form-select w-30" name="MatchFound" [(ngModel)]="submissionFilter.MatchFound" aria-label="Default select example">
+                <select class="form-select" name="MatchFound" [(ngModel)]="submissionFilter.MatchFound"
+                    aria-label="Default select example">
                     <option selected>Select</option>
                     <option value="true">True</option>
                     <option value="false">False</option>
                 </select>
-                <button type="submit" class="btn btn-light">Search</button>
-                <select class="form-select w-10" (ngModelChange)="getDataByPage(submissionFilter.PageNumber, $event)" name="MatchFound" [(ngModel)]="submissionFilter.PageSize" aria-label="Default select example">
+            </div>
+            <div>
+                <label class="form-label">Page Size</label>
+                <select class="form-select"
+                    (ngModelChange)="getDataByPage(submissionFilter.PageNumber, $event)" name="MatchFound"
+                    [(ngModel)]="submissionFilter.PageSize" aria-label="Default select example">
                     <option [ngValue]="10">10</option>
                     <option [ngValue]="20">20</option>
                     <option [ngValue]="50">50</option>
                     <option [ngValue]="100">100</option>
                 </select>
             </div>
-        </form>
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
     <ng-container *ngIf="submissions$ | async as data">
-        <div class="row row-cols-3 row-cols-md-3 g-4 mt-3" >
-            <div class="col" *ngFor="let item of data">
-                <div class="card h-100">
-                    <img src="/8767132.jpg" class="card-img-top submission-img" alt="submission image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{item.title}}</h5>
-                        <p class="card-text">{{item.description}}</p>
-                        <p class="card-text">Type: {{item.type}}</p>
-                        <p class="card-text">Date Posted:</p>
-                        <p class="card-text">Contact: {{item.contactInfo}}</p>
-                        <ng-container *ngIf="item.isMatched ==true; else notMatched">
-                        <a [routerLink]="['/matchfound',item.matchedLatitude, item.matchedLongitude, item.matchedId,item.type]" class="btn btn-primary">Match</a>
-                        </ng-container>
-                        <ng-template #notMatched>
-                        <a [routerLink]="" class="btn btn-secondary disabled">Match</a>
-                        </ng-template>
+        <div class="submissions-grid">
+            <div class="submission-card" *ngFor="let item of data">
+                <img src="/8767132.jpg" class="card-img-top submission-img" alt="submission image">
+                <div class="submission-body">
+                    <div class="card-topline">
+                        <span class="type-badge">{{item.type}}</span>
+                        <span class="match-badge" [class.is-ready]="item.isMatched == true">
+                            {{item.isMatched == true ? 'Matched' : 'Searching'}}
+                        </span>
                     </div>
+                    <h5>{{item.title}}</h5>
+                    <p class="description">{{item.description}}</p>
+                    <p class="meta">Contact: {{item.contactInfo}}</p>
+                    <ng-container *ngIf="item.isMatched ==true; else notMatched">
+                        <a [routerLink]="['/matchfound',item.matchedLatitude, item.matchedLongitude, item.matchedId,item.type,item.currentId]"
+                            class="btn btn-success w-100">Open Match</a>
+                    </ng-container>
+                    <ng-template #notMatched>
+                        <a [routerLink]="" class="btn btn-secondary disabled w-100">No Match Yet</a>
+                    </ng-template>
                 </div>
             </div>
         </div>
-    <ul class="pagination mt-3">
-        <li class="page-item"><a class="page-link" (click)="getDataByPage(currentPage-1,submissionFilter.PageSize)">Previous</a></li>
-        <li *ngFor="let item of list;let index = index" class="page-item"><a (click)="getDataByPage(index+1,submissionFilter.PageSize)"class="page-link">{{index+1}}</a></li>
-        <li class="page-item"><a class="page-link" (click)="getDataByPage(currentPage+1,submissionFilter.PageSize)">Next</a></li>
-    </ul>
+        <ul class="pagination mt-4">
+            <li class="page-item"><a class="page-link"
+                    (click)="getDataByPage(currentPage-1,submissionFilter.PageSize)">Previous</a></li>
+            <li *ngFor="let item of list;let index = index" class="page-item"><a
+                    (click)="getDataByPage(index+1,submissionFilter.PageSize)" class="page-link">{{index+1}}</a></li>
+            <li class="page-item"><a class="page-link"
+                    (click)="getDataByPage(currentPage+1,submissionFilter.PageSize)">Next</a></li>
+        </ul>
     </ng-container>
 </div>

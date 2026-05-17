@@ -4,6 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { LoginResponse, User } from '../models/loginResponse';
 import { HttpClient, httpResource, HttpResourceRef, HttpResourceRequest } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AuthService {
   user = signal<User | null>(null); // Creating signal, like behavior subject
 
   LoginSubmit(email? : string, password? : string) : Observable<LoginResponse>{
-    return this.http.post<LoginResponse>('https://localhost:50542/api/Auth/Login', {
+    return this.http.post<LoginResponse>(`${environment.apiUrl}/Auth/Login`, {
       email:email,
       password : password
     }, {withCredentials : true}).pipe( tap(x=> this.user.set(x) ));
@@ -26,7 +27,7 @@ export class AuthService {
   loadUser() : HttpResourceRef<User | undefined>{
     return httpResource<User>(()=>{
       const request : HttpResourceRequest={
-        url : `https://localhost:50542/api/Auth/Me`,
+        url : `${environment.apiUrl}/Auth/Me`,
         withCredentials:true
       }
       return request
@@ -34,7 +35,7 @@ export class AuthService {
   }
 
   LogOut() {
-    return this.http.post('https://localhost:50542/api/Auth/Logout',{},{
+    return this.http.post(`${environment.apiUrl}/Auth/Logout`,{},{
       withCredentials : true
     }).subscribe({
     next:() =>{

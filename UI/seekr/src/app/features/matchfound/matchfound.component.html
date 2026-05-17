@@ -1,21 +1,105 @@
-<div class="container">
-      <div class="row">
-            <div class="col-sm-8"><app-map class="position-relative"></app-map></div>
-            <ng-container *ngIf="matchfound$ | async as item">
-                  <div class="col-sm-4">
-                        <div class="mb-3 mt-3">
-                              <h4 class="text-center">We found a match</h4>
+<div class="container match-page">
+      <ng-container *ngIf="matchfound$ | async as item">
+            <ng-container *ngIf="item.type == 'Found' else foundDisplay">
+                  <ng-container
+                        *ngIf="item.status == 'Pending' || item.status == 'Claimed' || item.status == 'Confirmed' || item.status == 'Resolved'">
+                        <div class="match-status d-flex justify-content-between align-items-center mb-4">
+                              <div class="status-copy" *ngIf="item.status == 'Pending'">
+                                    <span class="status-label">Match found</span>
+                                    <h2>A possible match is waiting for you</h2>
+                                    <p>Review the details below and confirm whether this is your lost item.</p>
+                              </div>
+                              <div class="status-copy" *ngIf="item.status == 'Claimed'">
+                                    <span class="status-label">Claim sent</span>
+                                    <h2>Your claim is with the finder</h2>
+                                    <p>The finder can now review your claim and confirm the handover.</p>
+                              </div>
+                              <div class="status-copy" *ngIf="item.status == 'Confirmed'">
+                                    <span class="status-label">Finder confirmed</span>
+                                    <h2>The finder confirmed this item is yours</h2>
+                                    <p>After receiving your belongings, mark this report as received to close it.</p>
+                              </div>
+                              <div class="status-copy" *ngIf="item.status == 'Resolved'">
+                                    <span class="status-label">Resolved</span>
+                                    <h2>This match has been closed</h2>
+                                    <p>Thanks for helping keep the report history clear.</p>
+                              </div>
+                              <div class="status-actions" *ngIf="item.status == 'Pending'">
+                                    <button class="btn btn-success me-2" (click)="UpdateStatusByUser('Claimed')">
+                                          Yes, this is my item
+                                    </button>
+                                    <button class="btn btn-outline-secondary">
+                                          No, not mine
+                                    </button>
+                              </div>
+                              <div class="status-actions" *ngIf="item.status == 'Confirmed'">
+                                    <button class="btn btn-success me-2" (click)="UpdateStatusByUser('Resolved')">
+                                          I've received my item
+                                    </button>
+                              </div>
+                        </div>
+                  </ng-container>
+            </ng-container>
+            <ng-template #foundDisplay>
+                  <ng-container *ngIf=" item.type=='Lost' else lostdisplay">
+                        <ng-container
+                              *ngIf="item.status =='Claimed' || item.status == 'Confirmed' || item.status == 'Resolved'">
+                              <div class="match-status d-flex justify-content-between align-items-center mb-4">
+                                    <div class="status-copy" *ngIf="item.status == 'Claimed'">
+                                          <span class="status-label">Claim received</span>
+                                          <h2>Someone says this item belongs to them</h2>
+                                          <p>Review the matched report and confirm only if the details look right.</p>
+                                    </div>
+                                    <div class="status-copy" *ngIf="item.status == 'Confirmed'">
+                                          <span class="status-label">Confirmed</span>
+                                          <h2>You confirmed this claim</h2>
+                                          <p>The owner can now mark the item as received after handover.</p>
+                                    </div>
+                                    <div class="status-copy" *ngIf="item.status == 'Resolved'">
+                                          <span class="status-label">Resolved</span>
+                                          <h2>This item has been returned</h2>
+                                          <p>Thanks for helping close the loop.</p>
+                                    </div>
+
+                                    <div class="status-actions" *ngIf="item.status == 'Claimed'">
+                                          <button class="btn btn-success me-2"
+                                                (click)="UpdateStatusByUser('Confirmed')">
+                                                Confirm & Resolve
+                                          </button>
+                                          <button class="btn btn-outline-danger"
+                                                (click)="UpdateStatusByUser('Rejected')">
+                                                Reject Claim
+                                          </button>
+                                    </div>
+                              </div>
+                        </ng-container>
+                  </ng-container>
+                  <ng-template #lostdisplay>
+                  </ng-template>
+            </ng-template>
+            <div class="row match-layout">
+                  <div class="col-lg-8">
+                        <div class="map-panel">
+                              <app-map class="position-relative"></app-map>
+                        </div>
+                  </div>
+                  <div class="col-lg-4">
+                        <div class="match-details">
+                              <span class="details-eyebrow">Matched report</span>
+                              <h4>We found a match</h4>
                               <div class="mb-3">
                                     <label for="title" class="form-label">Title</label>
                                     <input type="text" class="form-control" [value]="item.title" name="title" readonly>
                               </div>
                               <div class="mb-3">
                                     <label for="description" class="form-label">Description</label>
-                                    <input type="text" class="form-control" [value]="item.description"name="description" readonly>
+                                    <input type="text" class="form-control" [value]="item.description"
+                                          name="description" readonly>
                               </div>
                               <div class="mb-3">
                                     <label for="location" class="form-label">Location</label>
-                                    <input type="text" class="form-control" [value]="item.location" name="location" readonly>
+                                    <input type="text" class="form-control" [value]="item.location" name="location"
+                                          readonly>
                               </div>
                               <div class="mb-3">
                                     <label for="date" class="form-label">Date</label>
@@ -23,14 +107,16 @@
                               </div>
                               <div class="mb-3">
                                     <label for="formFileMultiple" class="form-label">Image</label>
-                                    <input class="form-control" type="file" [value]="item.imageURL" name="imageURL" readonly>
+                                    <input class="form-control" type="file" [value]="item.imageURL" name="imageURL"
+                                          readonly>
                               </div>
                               <div class="mb-3">
                                     <label for="Contact" class="form-label">Contact</label>
-                                    <input type="text" class="form-control" [value]="item.contactinfo" name="contactinfo"readonly>
+                                    <input type="text" class="form-control" [value]="item.contactinfo"
+                                          name="contactinfo" readonly>
                               </div>
                         </div>
                   </div>
-            </ng-container>
-      </div>
+            </div>
+      </ng-container>
 </div>

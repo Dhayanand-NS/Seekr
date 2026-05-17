@@ -4,6 +4,7 @@ import { Coordinates } from '../../models/coordinates.model';
 import { LostFound } from '../../models/lostfound';
 import { HttpClient } from '@angular/common/http';
 import { LostFoundDTO } from '../../models/lostfoundDTO';
+import { environment } from '../../../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -29,28 +30,31 @@ export class LostService {
     modal.latitude = this.latitude;
     modal.longitude = this.longitude;
     console.log(modal);
-    return this.Http.post<void>('https://localhost:50542/api/Lost', modal,{withCredentials:true});
+    return this.Http.post<void>(`${environment.apiUrl}/Lost`, modal,{withCredentials:true});
   }
 
   getlosandfoundbyuser(): Observable<LostFound[]> {
-    return this.Http.get<LostFound[]>('https://localhost:50542/api/Lost');
+    return this.Http.get<LostFound[]>(`${environment.apiUrl}/Lost`);
   }
 
   getLostByID(id: string): Observable<LostFoundDTO> {
     console.log('Entered Lost Service to get Lost details');
-    return this.Http.get<LostFoundDTO>(`https://localhost:50542/api/Lost/${id}`);
+    return this.Http.get<LostFoundDTO>(`${environment.apiUrl}/Lost/${id}`);
   }
 
   getALLLost(): Observable<LostFoundDTO[]> {
-    return this.Http.get<LostFoundDTO[]>('https://localhost:50542/api/Lost/GetLostList',{withCredentials:true});
+    return this.Http.get<LostFoundDTO[]>(`${environment.apiUrl}/Lost/GetLostList`,{withCredentials:true});
   }
 
   deleteLost(lostId : string){
-    return this.Http.delete<LostFound>(`https://localhost:50542/api/Lost/${lostId}`,{withCredentials:true});
+    return this.Http.delete<LostFound>(`${environment.apiUrl}/Lost/${lostId}`,{withCredentials:true});
   }
   updateLost(modal? : LostFound):Observable<LostFound>{
     modal!.latitude = this.latitude;
     modal!.longitude = this.longitude;
-   return this.Http.put<LostFound>(`https://localhost:50542/api/Lost`, modal,{withCredentials:true});
+   return this.Http.put<LostFound>(`${environment.apiUrl}/Lost`, modal,{withCredentials:true});
+  }
+  updateLostStatus(status : string, currentId? :string , matchedId? : string):Observable<LostFound>{
+   return this.Http.put<LostFound>(`${environment.apiUrl}/Lost/UpdateLostStatus/${status}/${matchedId}/${currentId}`,{},{withCredentials:true});
   }
 }

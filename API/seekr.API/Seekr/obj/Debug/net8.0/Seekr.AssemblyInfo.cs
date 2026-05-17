@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Seekr")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a5b74342159ad4ca11a047b8658ad4c626217c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d674d2b7b4ee556f9e85effa1251fd11837d1b6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Seekr")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Seekr")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

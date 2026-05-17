@@ -8,5 +8,7 @@ export interface LostFound{
     location:string,
     date : Date;
     contactinfo: string,
-    radius : number
+    radius : number,
+    status : string,
+    claimedby : string
 }

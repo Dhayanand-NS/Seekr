@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Seekr.Models.DomainModels;
 using Seekr.Models.DTO;
+using Seekr.Repositories.Implementation;
 using Seekr.Repositories.Interface;
 using System.Security.Claims;
 
@@ -12,9 +13,11 @@ namespace Seekr.Controllers
     public class FoundController : ControllerBase
     {
         private readonly IFoundRepository _foundRepository;
-        public FoundController(IFoundRepository foundRepository)
+        private readonly ILostRepository _lostRepository;
+        public FoundController(IFoundRepository foundRepository, ILostRepository lostRepository)
         {
             _foundRepository = foundRepository;
+            _lostRepository = lostRepository;
         }
 
         [HttpPost]
@@ -33,7 +36,8 @@ namespace Seekr.Controllers
                 ContactInfo = found.ContactInfo,
                 Date = found.Date,
                 radius = found.radius,
-                UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))
+                UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)),
+                Status = "Pending"
             };
             var result = await _foundRepository.AddFoundAsync(Found);
 
@@ -112,6 +116,24 @@ namespace Seekr.Controllers
             }
             await _foundRepository.DeleteFoundByIdAsync(id);
             return Ok(existingFound);
+        }
+
+        [HttpPut]
+        [Route("UpdateFoundStatus/{status}/{matchedId}/{currentId}")]
+        [Authorize(Roles = "Administrator,User")]
+        public async Task<IActionResult> UpdateFoundStatus(string status, Guid matchedId, Guid currentId)
+        {
+            var existingFound = await _foundRepository.GetFoundByIdAsync(currentId);
+            var existingLost = await _lostRepository.GetLostByIdAsync(matchedId);
+            if (existingFound == null || existingLost == null)
+            {
+                return NotFound();
+            }
+            existingFound.Status = status == "Rejected" ? "Pending" : status;
+            existingLost.Status = status == "Rejected" ? "Pending" : status;
+            await _lostRepository.UpdateLostAsync(existingLost);
+            var updatedFound = await _foundRepository.UpdateFoundAsync(existingFound);
+            return Ok(updatedFound);
         }
     }
 }

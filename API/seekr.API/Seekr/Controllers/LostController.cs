@@ -14,9 +14,11 @@ namespace Seekr.Controllers
     public class LostController : ControllerBase
     {
         private readonly ILostRepository _lostRepository;
-        public LostController(ILostRepository lostRepository)
+        private readonly IFoundRepository _foundRepository;
+        public LostController(ILostRepository lostRepository, IFoundRepository foundRepository)
         {
             _lostRepository = lostRepository;
+            _foundRepository = foundRepository;
         }
 
         [HttpPost]
@@ -37,7 +39,8 @@ namespace Seekr.Controllers
                 ContactInfo = lost.ContactInfo,
                 Date = lost.Date,
                 radius = lost.radius,
-                UserId = Guid.Parse(userID)
+                UserId = Guid.Parse(userID),
+                Status= "Pending"
             };
             var result = await _lostRepository.AddLostAsync(Lost);
 
@@ -118,5 +121,25 @@ namespace Seekr.Controllers
             return Ok(existingFound);
         }
 
+
+        [HttpPut]
+        [Route("UpdateLostStatus/{status}/{matchedId}/{currentId}")]
+        [Authorize(Roles = "Administrator,User")]
+        public async Task<IActionResult> UpdateLostStatus(string status, Guid matchedId, Guid currentId)
+        {
+            var existingFound = await _foundRepository.GetFoundByIdAsync(matchedId);
+            var existingLost = await _lostRepository.GetLostByIdAsync(currentId);
+            if (existingFound == null || existingLost == null)
+            {
+                return NotFound();
+            }
+            existingFound.Status = status;
+            existingFound.ClaimedBy = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            existingLost.Status = status;
+            existingLost.ClaimedBy = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            await _lostRepository.UpdateLostAsync(existingLost);
+            var updatedFound = await _foundRepository.UpdateFoundAsync(existingFound);
+            return Ok(updatedFound);
+        }
     }
 }

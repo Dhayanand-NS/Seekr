@@ -12,11 +12,14 @@ export const userGuard: CanActivateFn = (route, state) => {
             return true;
         }
         else{
+          console.log("ENtered in else condition with logout route for user")
             authService.LogOut()
             return false;
         }
     }
     else{
+                console.log(user);
+        console.log("ENtered in else condition with login route for user")
         router.navigate(['/Login']);
         return false;
     }

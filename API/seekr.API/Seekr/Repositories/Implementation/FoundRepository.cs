@@ -11,6 +11,7 @@ namespace Seekr.Repositories.Implementation
 
         public FoundRepository(ApplicationDBContext dbContext)
         {
+
             _dbContext = dbContext;
         }
 
@@ -18,6 +19,7 @@ namespace Seekr.Repositories.Implementation
         {
             await _dbContext.Found.AddAsync(found);
             await _dbContext.SaveChangesAsync();
+
             return found;
         }
         public async Task<IEnumerable<Found>> GetAllFoundByUserAsync(Guid UserId)

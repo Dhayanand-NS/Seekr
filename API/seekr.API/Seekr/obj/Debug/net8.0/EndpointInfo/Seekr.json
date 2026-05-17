@@ -286,6 +286,46 @@
         }
       }
     },
+    "/api/Found/UpdateFoundStatus/{status}/{matchedId}/{currentId}": {
+      "put": {
+        "tags": [
+          "Found"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "matchedId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "currentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Lost": {
       "post": {
         "tags": [
@@ -481,6 +521,46 @@
         }
       }
     },
+    "/api/Lost/UpdateLostStatus/{status}/{matchedId}/{currentId}": {
+      "put": {
+        "tags": [
+          "Lost"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "matchedId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "currentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/admin/LostandFoundList": {
       "post": {
         "tags": [
@@ -664,6 +744,14 @@
           "userId": {
             "type": "string",
             "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimedBy": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -718,6 +806,14 @@
           "radius": {
             "type": "integer",
             "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimedBy": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -790,6 +886,14 @@
           "userId": {
             "type": "string",
             "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimedBy": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -844,6 +948,14 @@
           "radius": {
             "type": "integer",
             "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimedBy": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

@@ -202,6 +202,32 @@
     ]
   },
   {
+    "ContainingType": "Seekr.Controllers.FoundController",
+    "Method": "UpdateFoundStatus",
+    "RelativePath": "api/Found/UpdateFoundStatus/{status}/{matchedId}/{currentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "matchedId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "currentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Seekr.Controllers.LostController",
     "Method": "AddLost",
     "RelativePath": "api/Lost",
@@ -314,6 +340,32 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Seekr.Controllers.LostController",
+    "Method": "UpdateLostStatus",
+    "RelativePath": "api/Lost/UpdateLostStatus/{status}/{matchedId}/{currentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "matchedId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "currentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Seekr.Controllers.SubmissionsController",
